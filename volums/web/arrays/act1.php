@@ -98,5 +98,5 @@
     echo "<h3>Alumnes que fan IFC31A o IFC31B</h3>";
     echo implode(", ",array_merge($IFC31A,$IFC31B))."<hr/>";
     ?>
-
+    
 </html>
