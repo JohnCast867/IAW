@@ -1,4 +1,10 @@
 <?php
+
+function mostrar_menu ()
+{
+    echo <a href="funcion1.php">Funcio1</a>;
+}
+
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
     $jsonString = file_get_contents($nomFitxer);
     $arrayAsso = json_decode($jsonString, true);
