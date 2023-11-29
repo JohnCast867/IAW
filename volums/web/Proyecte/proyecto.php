@@ -16,7 +16,7 @@
     <nav>
         <div>
             <ul>
-                <li><a class="link" href="funcion1">
+                <li><a class="link" href="funcion1.php">
                         Funcionalidad 1
                     </a>
 

@@ -1,7 +1,7 @@
 <?php
 
 function mostrar_menu () {
-    echo <a href="funcion1.php">funcion1</a>;
+    echo "<a href=funcion1.php>funcion1</a>";
 }
 
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
