@@ -17,7 +17,7 @@ html {
 }
 
 .titulo {
-  background-image: url(../imatges/wp1958104-php-wallpapers.jpg);
+  background-image: url(../imatges/pang-yuhao-wCi28eq8TF4-unsplash.jpg);
   background-size: cover;
 }
 
@@ -132,7 +132,7 @@ table {
     .imagenes img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
     }
 
 }
