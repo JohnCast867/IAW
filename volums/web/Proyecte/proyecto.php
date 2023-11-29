@@ -7,14 +7,44 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Proyecto 1era avaluacion</h1>
-    <h2>John javier castillo y Nicolas Gimenez Mansilla</h2>
+    <header>
+        <div class="titulo">
+            <h1>Proyecto 1era avaluacion</h1>
+            <h2>John Javier castillo y Nicolas Gimenez Mansilla</h2>
+        </div>
+    </header>
     <nav>
-        <h4>Funcionalidad 1</h4>
-        <h4>Funcionalidad 2</h4>
-        <h4>Funcionalidad 3</h4>
-        <h4>Funcionalidad 4</h4>
+        <div>
+            <ul>
+                <li><a class="link" href="#">
+                        Funcionalidad 1
+                    </a>
+
+                </li>
+                <li><a href="ajuda.html">
+                        Funcionalidad 2
+                    </a>
+
+                </li>
+                <li><a href="contacte.html">
+                        Funcionalidad 3
+                    </a>
+
+                </li>
+                <li><a href="conf.html">
+                        Funcionalidad 4
+                    </a>
+
+                </li>
+                <li><a href="altres.html">
+                        Funcionalidad 5
+                    </a>
+
+                </li>
+            </ul>
+        </div>
     </nav>
+
 </body>
 <?php
     include 'funcion1.php';
