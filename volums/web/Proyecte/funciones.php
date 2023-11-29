@@ -1,14 +1,13 @@
 <?php
 
 function mostrar_menu () {
-    echo "<a href=funcion1.php>Funcio1</a>";
+    echo <a href="funcion1.php">funcion1</a>;
 }
 
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
     $jsonString = file_get_contents($nomFitxer);
     $arrayAsso = json_decode($jsonString, true);
     
-    // Verifica si hay errores durante la decodificación
     if (json_last_error() !== JSON_ERROR_NONE) {
         die('Error  JSON: ' . json_last_error_msg());
     }

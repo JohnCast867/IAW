@@ -16,7 +16,7 @@
     <nav>
         <div>
             <ul>
-                <li><a class="link" href="#">
+                <li><a class="link" href="funcion1">
                         Funcionalidad 1
                     </a>
 
@@ -50,5 +50,9 @@
     include 'funcion1.php';
     
     tabla($juegos);
+
+    include 'funcion2.php';
+    
+    codigo($code);
 ?>
 </html>
