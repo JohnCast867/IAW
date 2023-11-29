@@ -17,9 +17,10 @@ html {
 }
 
 .titulo {
-  background-image: url(../imatges/pang-yuhao-wCi28eq8TF4-unsplash.jpg);
+  background-image: url(../imatges/nature-3656121_1920.jpg);
   background-size: cover;
 }
+
 
 h1 {
   margin: 20px;
@@ -34,6 +35,7 @@ h1 {
 h2 {
   padding: 20px;
   text-align: center;
+  color: white;
 }
 
 nav {
@@ -107,33 +109,10 @@ table {
         margin: 0px 10px;
     }
 
-    .contenidor {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+    .titulo {
+      background-image: url(../imatges/nature-3656121_1920\ \(1\).jpg);
+      width: 100%;
+      height: 220px;
     }
-
-    .text-col {
-        grid-column: 1;
-    }
-
-
-    .img-col {
-        grid-column: 2;
-
-    }
-
-
-    .imagenes {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
-    }
-
-    .imagenes img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-
+    
 }
