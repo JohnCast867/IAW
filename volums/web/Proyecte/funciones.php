@@ -22,7 +22,6 @@ function generarHTML() {
     echo $html;
 }
 
-// Llamada a la función para generar el HTML
 generarHTML();
 
 function mostrar_jocs () {
