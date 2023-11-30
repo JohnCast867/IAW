@@ -8,4 +8,13 @@
 </head>
 <body>
 </body>
+<?php
+    include 'funcion1.php';
+    
+    tabla($juegos);
+
+    include 'funcion2.php';
+    
+    codigo($IDs);
+?>
 </html>
