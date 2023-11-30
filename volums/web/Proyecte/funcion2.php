@@ -1,6 +1,6 @@
 <?php
 include "funciones.php";
-$IDs = arrayDeJuegos();
+$IDs = array();
 carrega_fitxer("codigos.json", $IDs);
-asignarIDs($IDs);
+asignar_ids($IDs);
 ?>

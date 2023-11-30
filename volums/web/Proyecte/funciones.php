@@ -33,26 +33,36 @@ foreach ($array as $key => $value){
     echo "</table>";
 }
 
-function asignarIDs(&$arrayDeJuegos) {
-    // Obtener el ID más alto existente
-    $idMasAlto = obtenerIDMasAlto($arrayDeJuegos);
+function asignar_ids(&$array) {
+    $maxId = 0;
+    foreach ($array as $juego) {
+        if (isset($juego['id']) && $juego['id'] > $maxId) {
+            $maxId = $juego['id'];
+        }
+    }
 
-    // Asignar IDs a juegos que no tienen
-    foreach ($arrayDeJuegos as &$juego) {
+    foreach ($array as &$juego) {
         if (!isset($juego['id'])) {
-            $idMasAlto++;
-            $juego['id'] = $idMasAlto;
+            $maxId++;
+            $juego['id'] = $maxId;
         }
     }
-}
 
-function obtenerIDMasAlto($arrayDeJuegos) {
-    $idMasAlto = 0;
-    foreach ($arrayDeJuegos as $juego) {
-        if (isset($juego['id']) && $juego['id'] > $idMasAlto) {
-            $idMasAlto = $juego['id'];
-        }
+    echo "<table border=1>";
+    echo '<tr><th>ID</th>
+        <th>Nom</th>
+        <th>Desenvolupador</th>
+        <th>Plataforma</th>
+        <th>Llançament</th></tr>';
+
+    foreach ($array as $value) {
+        echo "<tr><td>" . $value['id'] . "</td>
+        <td>" . $value['Nom'] . "</td>
+        <td>" . $value['Desenvolupador'] . "</td>
+        <td>" . $value['Plataforma'] . "</td>
+        <td>" . $value['Llançament'] . "</td></tr>";
     }
-    return $idMasAlto;
+
+    echo "</table>";
 }
 ?>
