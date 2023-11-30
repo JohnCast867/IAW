@@ -1,6 +1,6 @@
 <?php
 
-function mostrar_menu () {
+function mostrar_jocs () {
     echo "<a href=funcion1.php>funcion1</a>";
 }
 
