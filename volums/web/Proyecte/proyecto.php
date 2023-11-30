@@ -10,7 +10,7 @@
     <header>
         <div class="titulo">
             <h1>Proyecto 1era avaluacion</h1>
-            <h2>John Javier castillo y Nicolas Gimenez Mansilla</h2>
+            <h2>John Castillo Villalta y Nicolas Gimenez Mansilla</h2>
         </div>
     </header>
     <nav>
