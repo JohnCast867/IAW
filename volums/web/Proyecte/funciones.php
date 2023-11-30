@@ -1,5 +1,30 @@
 <?php
 
+function generarHTML() {
+    $html = '<header>
+        <div class="titulo">
+            <h1>Proyecto 1era avaluacion</h1>
+            <h2>John castillo Villalta y Nicolas Gimenez Mansilla</h2>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <ul>
+                <li><a class="link" href="funcion1.php">Funcionalidad 1</a></li>
+                <li><a class="link" href="funcion2.php">Funcionalidad 2</a></li>
+                <li><a class="link" href="funcion3.php">Funcionalidad 3</a></li>
+                <li><a href="conf.html">Funcionalidad 4</a></li>
+                <li><a href="altres.html">Funcionalidad 5</a></li>
+            </ul>
+        </div>
+    </nav>';
+
+    echo $html;
+}
+
+// Llamada a la función para generar el HTML
+generarHTML();
+
 function mostrar_jocs () {
     echo "<a href=funcion1.php>funcion1</a>";
 }
