@@ -10,7 +10,7 @@
     <header>
         <div class="titulo">
             <h1>Proyecto 1era avaluacion</h1>
-            <h2>John Castillo Villalta y Nicolas Gimenez Mansilla</h2>
+            <h2>John castillo Villalta y Nicolas Gimenez Mansilla</h2>
         </div>
     </header>
     <nav>
@@ -21,12 +21,12 @@
                     </a>
 
                 </li>
-                <li><a href="funcion2.php">
+                <li><a class="link" href="funcion2.php">
                         Funcionalidad 2
                     </a>
 
                 </li>
-                <li><a href="contacte.html">
+                <li><a class="link" href="funcion3.php">
                         Funcionalidad 3
                     </a>
 
