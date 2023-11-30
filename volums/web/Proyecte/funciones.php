@@ -18,8 +18,7 @@ function carrega_fitxer($nomFitxer, &$arrayAsso) {
 }
 
 
-function tabla ($array)
-{
+function tabla ($array) {
 echo "<table border=1>";
 echo '<tr><th>Nom</th>
     <th>Desenvolupador</th>
@@ -32,14 +31,28 @@ foreach ($array as $key => $value){
     <td>" . $value['Llançament'] . "</td></tr>";
     }
     echo "</table>";
-        }
+}
 
-        function asignar_codigos(&$arrayAsso) {
-            $codigoBase = 1000; 
-        
-            foreach ($arrayAsso as &$juego) {
-                $juego['Codigo'] = $codigoBase++;
-            }
+function asignarIDs(&$arrayDeJuegos) {
+    // Obtener el ID más alto existente
+    $idMasAlto = obtenerIDMasAlto($arrayDeJuegos);
+
+    // Asignar IDs a juegos que no tienen
+    foreach ($arrayDeJuegos as &$juego) {
+        if (!isset($juego['id'])) {
+            $idMasAlto++;
+            $juego['id'] = $idMasAlto;
         }
-        
+    }
+}
+
+function obtenerIDMasAlto($arrayDeJuegos) {
+    $idMasAlto = 0;
+    foreach ($arrayDeJuegos as $juego) {
+        if (isset($juego['id']) && $juego['id'] > $idMasAlto) {
+            $idMasAlto = $juego['id'];
+        }
+    }
+    return $idMasAlto;
+}
 ?>

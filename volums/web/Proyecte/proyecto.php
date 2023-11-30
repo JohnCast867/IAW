@@ -53,6 +53,6 @@
 
     include 'funcion2.php';
     
-    codigo($code);
+    codigo($IDs);
 ?>
 </html>
