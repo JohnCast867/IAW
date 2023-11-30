@@ -10,8 +10,8 @@
 </body>
 <?php
 include "funciones.php";
-$IDs = arrayDeJuegos();
-carrega_fitxer("codigos.json", $IDs);
-asignarIDs($IDs);
+$IDs = array();
+carrega_fitxer("games.json", $IDs);
+asignar_ids($IDs);
 ?>
 </html>
