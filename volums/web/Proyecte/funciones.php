@@ -4,6 +4,10 @@ function mostrar_menu () {
     echo "<a href=funcion1.php>funcion1</a>";
 }
 
+function codigos () {
+    echo "<a href=funcion2.php>funcion2</a>";
+}
+
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
     $jsonString = file_get_contents($nomFitxer);
     $arrayAsso = json_decode($jsonString, true);
@@ -29,4 +33,13 @@ foreach ($array as $key => $value){
     }
     echo "</table>";
         }
+
+        function asignar_codigos(&$arrayAsso) {
+            $codigoBase = 1000; 
+        
+            foreach ($arrayAsso as &$juego) {
+                $juego['Codigo'] = $codigoBase++;
+            }
+        }
+        
 ?>

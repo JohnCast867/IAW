@@ -21,7 +21,7 @@
                     </a>
 
                 </li>
-                <li><a href="ajuda.html">
+                <li><a href="funcion2.php">
                         Funcionalidad 2
                     </a>
 
