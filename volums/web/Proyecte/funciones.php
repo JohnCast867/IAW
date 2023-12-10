@@ -157,6 +157,30 @@ function verificarRegistrosRepetidos($jsonFilePath)
     return 0;
 }
 
+function guardarRegistrosRepetidosEnJSON($jsonFilePath)
+{
+    carrega_fitxer($jsonFilePath, $data);
+    $nombresJuegos = array_column($data, 'Nom');
+    $duplicados = array_unique(array_diff_assoc($nombresJuegos, array_unique($nombresJuegos)));
+
+    if (!empty($duplicados)) {
+        $registrosRepetidos = array_filter($data, function ($juego) use ($duplicados) {
+            return in_array($juego['Nom'], $duplicados);
+        });
+
+        $jsonResultFilePath = 'JSON_Resultat_repetits.json';
+        $jsonResultString = json_encode($registrosRepetidos, JSON_PRETTY_PRINT);
+
+        if (file_put_contents($jsonResultFilePath, $jsonResultString)) {
+            echo "Registros repetidos guardados en $jsonResultFilePath\n";
+        } else {
+            echo "Error al guardar el archivo JSON_Resultat_repetits.json\n";
+        }
+    } else {
+        echo "No hay registros repetidos.\n";
+    }
+}
+
 function eliminarRepetits($nomFitxer) {
     carrega_fitxer($nomFitxer, $juegos);
 
