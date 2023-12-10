@@ -11,5 +11,8 @@
 <?php
 include "funciones.php";
 generarHTML();
+$IDs = array();
+carrega_fitxer("codigos.json", $IDs);
+contarVideojocsPerAny($IDs);
 ?>
 </html>

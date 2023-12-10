@@ -206,4 +206,31 @@ function ordenarAlfabeticamenteYMostrar($array) {
     file_put_contents('JSON_Resultat_ordenat_alfabetic.json', $jsonOrdenado);
 }
 
+function contarVideojocsPerAny($array) {
+    // Crear un array para almacenar el recuento de videojuegos por año
+    $contadores = array();
+
+    // Contar videojuegos por año
+    foreach ($array as $value) {
+        $any = date('Y', strtotime($value['Llançament']));
+
+        if (!isset($contadores[$any])) {
+            $contadores[$any] = 1;
+        } else {
+            $contadores[$any]++;
+        }
+    }
+
+    // Imprimir la información en pantalla
+    echo "<table border=1>";
+    echo '<tr><th>Any</th>
+        <th>Nombre de Videojocs</th></tr>';
+
+    foreach ($contadores as $any => $count) {
+        echo "<tr><td>" . $any . "</td>
+        <td>" . $count . "</td></tr>";
+    }
+
+    echo "</table>";
+}
 ?>
