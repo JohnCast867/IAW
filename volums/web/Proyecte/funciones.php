@@ -36,6 +36,10 @@ function codigos () {
     echo "<a href=funcion2.php>funcion2</a>";
 }
 
+function data_expiracio () {
+    echo "<a href=funcion4.php>funcion4</a>";
+}
+
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
     $jsonString = file_get_contents($nomFitxer);
     $arrayAsso = json_decode($jsonString, true);
@@ -89,6 +93,35 @@ function asignar_ids(&$array) {
         <td>" . $value['Desenvolupador'] . "</td>
         <td>" . $value['Plataforma'] . "</td>
         <td>" . $value['Llançament'] . "</td></tr>";
+    }
+
+    echo "</table>";
+}
+
+function agregarFechaExpiracion($juegos) {
+    foreach ($juegos as &$juego) {
+        $lanzamiento = new DateTime($juego["Llançament"]);
+        
+        $expiracion = $lanzamiento->add(new DateInterval('P5Y'));
+        
+        $juego["Expiracio"] = $expiracion->format('Y-m-d');
+    }
+    
+    echo "<table border=1>";
+    echo '<tr><th>ID</th>
+        <th>Nom</th>
+        <th>Desenvolupador</th>
+        <th>Plataforma</th>
+        <th>Llançament</th>
+        <th>Expiracio</th></tr>';
+
+    foreach ($array as $value) {
+        echo "<tr><td>" . $value['id'] . "</td>
+        <td>" . $value['Nom'] . "</td>
+        <td>" . $value['Desenvolupador'] . "</td>
+        <td>" . $value['Plataforma'] . "</td>
+        <td>" . $value['Llançament'] . "</td>
+        <td>" . $value['Expiracio'] . "</td></tr>";
     }
 
     echo "</table>";

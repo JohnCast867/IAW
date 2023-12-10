@@ -12,5 +12,11 @@
 <?php
 include "funciones.php";
 generarHTML();
+$juegos = array();
+carrega_fitxer("games.json", $juegos);
+
+
+agregarFechaExpiracion($juegos);
+
 ?>
 </html>

@@ -11,5 +11,6 @@
 <?php
 include "funciones.php";
 generarHTML();
+
 ?>
 </html>
