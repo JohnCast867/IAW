@@ -121,25 +121,19 @@ function eliminarJuegosPorFecha($archivoJson, $fechaInicio, $fechaFin) {
 
 
 function agregarFechaExpiracion($juegos) {
-    foreach ($juegos as &$juego) {
-        $lanzamiento = new DateTime($juego["Llançament"]);
-        
-        $expiracion = $lanzamiento->add(new DateInterval('P5Y'));
-        
-        $juego["Expiracio"] = $expiracion->format('Y-m-d');
-    }
-    
     echo "<table border=1>";
-    echo '<tr><th>ID</th>
-        <th>Nom</th>
+    echo '<tr><th>Nom</th>
         <th>Desenvolupador</th>
         <th>Plataforma</th>
         <th>Llançament</th>
         <th>Expiracio</th></tr>';
 
-    foreach ($array as $value) {
-        echo "<tr><td>" . $value['id'] . "</td>
-        <td>" . $value['Nom'] . "</td>
+    foreach ($juegos as $value) {
+        $lanzamiento = new DateTime($value["Llançament"]);
+        $expiracion = $lanzamiento->add(new DateInterval('P5Y'));
+        $value["Expiracio"] = $expiracion->format('Y-m-d');
+
+        echo "<tr><td>" . $value['Nom'] . "</td>
         <td>" . $value['Desenvolupador'] . "</td>
         <td>" . $value['Plataforma'] . "</td>
         <td>" . $value['Llançament'] . "</td>

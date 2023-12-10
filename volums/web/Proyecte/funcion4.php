@@ -13,10 +13,7 @@
 include "funciones.php";
 generarHTML();
 $juegos = array();
-carrega_fitxer("games.json", $juegos);
-
-
+carrega_fitxer("JSON_Resultat_Data_Expiració.json", $juegos);
 agregarFechaExpiracion($juegos);
-
 ?>
 </html>
