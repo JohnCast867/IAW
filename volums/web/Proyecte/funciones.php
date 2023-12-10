@@ -157,6 +157,31 @@ function verificarRegistrosRepetidos($jsonFilePath)
     return 0;
 }
 
+function eliminarRepetits($nomFitxer) {
+    // Cargar el archivo JSON
+    carrega_fitxer($nomFitxer, $juegos);
+
+    // Identificar y eliminar registros duplicados
+    $registrosDuplicados = array_diff_assoc($juegos, array_unique($juegos, SORT_REGULAR));
+
+    // Crear el nuevo archivo JSON sin duplicados
+    $juegosUnicos = array_map("unserialize", array_unique(array_map("serialize", $juegos)));
+    $jsonActualizado = json_encode(array_values($juegosUnicos), JSON_PRETTY_PRINT);
+    $nouFitxer = 'JSON_Resultat_eliminar_repetits.json';
+    file_put_contents($nouFitxer, $jsonActualizado);
+
+    // Mostrar los registros duplicados eliminados
+    echo "Registres duplicats eliminats:\n";
+    print_r($registrosDuplicados);
+
+    echo "\nNou fitxer creat: $nouFitxer";
+
+    // Mostrar el contenido del nuevo archivo JSON
+    carrega_fitxer($nouFitxer, $juegosNou);
+    echo "\nContingut del nou fitxer:\n";
+    tabla($juegosNou);
+}
+
 
 function encontrarJuegoMasAntiguoYMasModerno($array) {
     if ($array === null || empty($array)) {
@@ -182,6 +207,55 @@ function encontrarJuegoMasAntiguoYMasModerno($array) {
     print_r($juegoMasModerno);
 }
 
+function ordenarAlfabeticamenteYMostrar($array) {
+    usort($array, function($a, $b) {
+        return strcmp($a['Nom'], $b['Nom']);
+    });
 
+    echo "<table border=1>";
+    echo '<tr><th>Nom</th>
+        <th>Desenvolupador</th>
+        <th>Plataforma</th>
+        <th>Llançament</th></tr>';
 
+    foreach ($array as $value) {
+        echo "<tr><td>" . $value['Nom'] . "</td>
+        <td>" . $value['Desenvolupador'] . "</td>
+        <td>" . $value['Plataforma'] . "</td>
+        <td>" . $value['Llançament'] . "</td></tr>";
+    }
+
+    echo "</table>";
+
+    $jsonOrdenado = json_encode($array, JSON_PRETTY_PRINT);
+    file_put_contents('JSON_Resultat_ordenat_alfabetic.json', $jsonOrdenado);
+}
+
+function contarVideojocsPerAny($array) {
+    // Crear un array para almacenar el recuento de videojuegos por año
+    $contadores = array();
+
+    // Contar videojuegos por año
+    foreach ($array as $value) {
+        $any = date('Y', strtotime($value['Llançament']));
+
+        if (!isset($contadores[$any])) {
+            $contadores[$any] = 1;
+        } else {
+            $contadores[$any]++;
+        }
+    }
+
+    // Imprimir la información en pantalla
+    echo "<table border=1>";
+    echo '<tr><th>Any</th>
+        <th>Nombre de Videojocs</th></tr>';
+
+    foreach ($contadores as $any => $count) {
+        echo "<tr><td>" . $any . "</td>
+        <td>" . $count . "</td></tr>";
+    }
+
+    echo "</table>";
+}
 ?>
