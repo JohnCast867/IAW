@@ -11,5 +11,8 @@
 <?php
 include "funciones.php";
 generarHTML();
+carrega_fitxer("games.json", $juegos);
+encontrarJuegoMasAntiguoYMasModerno($juegos);
+
 ?>
 </html>

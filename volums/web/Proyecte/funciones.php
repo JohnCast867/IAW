@@ -142,4 +142,31 @@ function agregarFechaExpiracion($juegos) {
 
     echo "</table>";
 }
+
+function encontrarJuegoMasAntiguoYMasModerno($array) {
+    if ($array === null || empty($array)) {
+        echo "No hay datos para procesar.\n";
+        return;
+    }
+
+    usort($array, function ($a, $b) {
+        $fechaA = new DateTime($a['Llançament']);
+        $fechaB = new DateTime($b['Llançament']);
+        return $fechaA <=> $fechaB;
+    });
+
+    $juegoMasAntiguo = $array[0];
+    $juegoMasModerno = end($array);
+
+    echo "Juego más antiguo:\n";
+    print_r($juegoMasAntiguo);
+    echo "<br>";
+    echo "<br>";
+
+    echo "\nJuego más moderno:\n";
+    print_r($juegoMasModerno);
+}
+
+
+
 ?>

@@ -12,7 +12,7 @@
 include "funciones.php";
 generarHTML();
 $IDs = array();
-carrega_fitxer("games.json", $IDs);
+carrega_fitxer("codigos.json", $IDs);
 asignar_ids($IDs);
 ?>
 </html>
