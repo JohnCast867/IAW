@@ -11,5 +11,8 @@
 <?php
 include "funciones.php";
 generarHTML();
+$IDs = array();
+carrega_fitxer("codigos.json", $IDs);
+ordenarAlfabeticamenteYMostrar($IDs);
 ?>
 </html>

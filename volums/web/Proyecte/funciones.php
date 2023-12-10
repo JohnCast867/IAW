@@ -182,6 +182,28 @@ function encontrarJuegoMasAntiguoYMasModerno($array) {
     print_r($juegoMasModerno);
 }
 
+function ordenarAlfabeticamenteYMostrar($array) {
+    usort($array, function($a, $b) {
+        return strcmp($a['Nom'], $b['Nom']);
+    });
 
+    echo "<table border=1>";
+    echo '<tr><th>Nom</th>
+        <th>Desenvolupador</th>
+        <th>Plataforma</th>
+        <th>Llançament</th></tr>';
+
+    foreach ($array as $value) {
+        echo "<tr><td>" . $value['Nom'] . "</td>
+        <td>" . $value['Desenvolupador'] . "</td>
+        <td>" . $value['Plataforma'] . "</td>
+        <td>" . $value['Llançament'] . "</td></tr>";
+    }
+
+    echo "</table>";
+
+    $jsonOrdenado = json_encode($array, JSON_PRETTY_PRINT);
+    file_put_contents('JSON_Resultat_ordenat_alfabetic.json', $jsonOrdenado);
+}
 
 ?>
