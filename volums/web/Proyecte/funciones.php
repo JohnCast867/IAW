@@ -223,10 +223,8 @@ function ordenarAlfabeticamenteYMostrar($array) {
 }
 
 function contarVideojocsPerAny($array) {
-    // Crear un array para almacenar el recuento de videojuegos por año
     $contadores = array();
 
-    // Contar videojuegos por año
     foreach ($array as $value) {
         $any = date('Y', strtotime($value['Llançament']));
 
@@ -237,7 +235,6 @@ function contarVideojocsPerAny($array) {
         }
     }
 
-    // Imprimir la información en pantalla
     echo "<table border=1>";
     echo '<tr><th>Any</th>
         <th>Nombre de Videojocs</th></tr>';
