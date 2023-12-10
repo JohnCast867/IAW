@@ -100,9 +100,10 @@ table {
     }
 
     nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 200px;
     }
 
     nav ul li{
