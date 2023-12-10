@@ -11,5 +11,16 @@
 <?php
 include "funciones.php";
 generarHTML();
+$juegos = array();
+carrega_fitxer("games.json", $juegos);
+
+$jsonFilePath = 'games.json';
+$resultado = verificarRegistrosRepetidos($jsonFilePath);
+if ($resultado === 1) {
+    echo "Se encontraron registros repetidos.\n";
+} else {
+    echo "No se encontraron registros repetidos.\n";
+}
+
 ?>
 </html>
