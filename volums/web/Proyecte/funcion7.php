@@ -11,5 +11,8 @@
 <?php
 include "funciones.php";
 generarHTML();
+eliminarRepetits("games.json");
+
+
 ?>
 </html>
