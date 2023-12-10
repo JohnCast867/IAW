@@ -102,6 +102,7 @@ table {
     nav ul {
         display: flex;
         justify-content: center;
+        margin: 0 200px;
     }
 
     nav ul li{

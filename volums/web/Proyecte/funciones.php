@@ -13,8 +13,13 @@ function generarHTML() {
                 <li><a class="link" href="funcion1.php">Funcionalidad 1</a></li>
                 <li><a class="link" href="funcion2.php">Funcionalidad 2</a></li>
                 <li><a class="link" href="funcion3.php">Funcionalidad 3</a></li>
-                <li><a href="conf.html">Funcionalidad 4</a></li>
-                <li><a href="altres.html">Funcionalidad 5</a></li>
+                <li><a class="link" href="funcion4.php">Funcionalidad 4</a></li>
+                <li><a class="link" href="funcion5.php">Funcionalidad 5</a></li>
+                <li><a class="link" href="funcion6.php">Funcionalidad 6</a></li>
+                <li><a class="link" href="funcion7.php">Funcionalidad 7</a></li>
+                <li><a class="link" href="funcion8.php">Funcionalidad 8</a></li>
+                <li><a class="link" href="funcion9.php">Funcionalidad 9</a></li>
+                <li><a class="link" href="funcion10.php">Funcionalidad 10</a></li>
             </ul>
         </div>
     </nav>';
