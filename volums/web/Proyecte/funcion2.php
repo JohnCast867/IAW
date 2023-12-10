@@ -10,6 +10,7 @@
 </body>
 <?php
 include "funciones.php";
+generarHTML();
 $IDs = array();
 carrega_fitxer("games.json", $IDs);
 asignar_ids($IDs);
