@@ -158,27 +158,18 @@ function verificarRegistrosRepetidos($jsonFilePath)
 }
 
 function eliminarRepetits($nomFitxer) {
-    // Cargar el archivo JSON
     carrega_fitxer($nomFitxer, $juegos);
 
-    // Identificar y eliminar registros duplicados
     $registrosDuplicados = array_diff_assoc($juegos, array_unique($juegos, SORT_REGULAR));
 
-    // Crear el nuevo archivo JSON sin duplicados
     $juegosUnicos = array_map("unserialize", array_unique(array_map("serialize", $juegos)));
     $jsonActualizado = json_encode(array_values($juegosUnicos), JSON_PRETTY_PRINT);
     $nouFitxer = 'JSON_Resultat_eliminar_repetits.json';
     file_put_contents($nouFitxer, $jsonActualizado);
 
-    // Mostrar los registros duplicados eliminados
-    echo "Registres duplicats eliminats:\n";
-    print_r($registrosDuplicados);
 
-    echo "\nNou fitxer creat: $nouFitxer";
 
-    // Mostrar el contenido del nuevo archivo JSON
     carrega_fitxer($nouFitxer, $juegosNou);
-    echo "\nContingut del nou fitxer:\n";
     tabla($juegosNou);
 }
 
