@@ -148,4 +148,19 @@ function agregarFechaExpiracion($juegos) {
 
     echo "</table>";
 }
+
+function verificarRegistrosRepetidos($jsonFilePath)
+{
+    carrega_fitxer($jsonFilePath, $data);
+    $nombresJuegos = array_column($data, 'Nom');
+    $duplicados = array_unique(array_diff_assoc($nombresJuegos, array_unique($nombresJuegos)));
+
+    if (!empty($duplicados)) {
+        echo "¡Hay registros repetidos!\n";
+        return 1;
+    }
+
+    return 0;
+}
+
 ?>
