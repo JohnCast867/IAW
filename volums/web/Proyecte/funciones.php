@@ -10,6 +10,7 @@ function generarHTML() {
     <nav>
         <div>
             <ul>
+                <li><a class="link" href="proyecto.php">Inicio</a></li> 
                 <li><a class="link" href="funcion1.php">Funcionalidad 1</a></li>
                 <li><a class="link" href="funcion2.php">Funcionalidad 2</a></li>
                 <li><a class="link" href="funcion3.php">Funcionalidad 3</a></li>
@@ -97,6 +98,27 @@ function asignar_ids(&$array) {
 
     echo "</table>";
 }
+
+function eliminarJuegosPorFecha($archivoJson, $fechaInicio, $fechaFin) {
+    carrega_fitxer($archivoJson, $juegos);
+
+    $juegosFiltrados = array_filter($juegos, function ($juego) use ($fechaInicio, $fechaFin) {
+        $fechaLanzamiento = $juego['Llançament'];
+        return ($fechaLanzamiento >= $fechaInicio && $fechaLanzamiento <= $fechaFin);
+    });
+
+    foreach ($juegosFiltrados as $juego) {
+        $index = array_search($juego, $juegos);
+        if ($index !== false) {
+            unset($juegos[$index]);
+        }
+    }
+
+    $jsonActualizado = json_encode(array_values($juegos), JSON_PRETTY_PRINT);
+
+    file_put_contents($archivoJson, $jsonActualizado);
+}
+
 
 function agregarFechaExpiracion($juegos) {
     foreach ($juegos as &$juego) {
