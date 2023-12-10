@@ -94,4 +94,25 @@ function asignar_ids(&$array) {
 
     echo "</table>";
 }
+
+function eliminarJuegosPorFecha($archivoJson, $fechaInicio, $fechaFin) {
+    carrega_fitxer($archivoJson, $juegos);
+
+    $juegosFiltrados = array_filter($juegos, function ($juego) use ($fechaInicio, $fechaFin) {
+        $fechaLanzamiento = $juego['Llançament'];
+        return ($fechaLanzamiento >= $fechaInicio && $fechaLanzamiento <= $fechaFin);
+    });
+
+    foreach ($juegosFiltrados as $juego) {
+        $index = array_search($juego, $juegos);
+        if ($index !== false) {
+            unset($juegos[$index]);
+        }
+    }
+
+    $jsonActualizado = json_encode(array_values($juegos), JSON_PRETTY_PRINT);
+
+    file_put_contents($archivoJson, $jsonActualizado);
+}
+
 ?>
