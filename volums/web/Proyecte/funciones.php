@@ -28,19 +28,6 @@ function generarHTML() {
     echo $html;
 }
 
-
-function mostrar_jocs () {
-    echo "<a href=funcion1.php>funcion1</a>";
-}
-
-function codigos () {
-    echo "<a href=funcion2.php>funcion2</a>";
-}
-
-function data_expiracio () {
-    echo "<a href=funcion4.php>funcion4</a>";
-}
-
 function carrega_fitxer($nomFitxer, &$arrayAsso) {
     $jsonString = file_get_contents($nomFitxer);
     $arrayAsso = json_decode($jsonString, true);
@@ -50,7 +37,7 @@ function carrega_fitxer($nomFitxer, &$arrayAsso) {
     }
 }
 
-
+# funcion 1
 function tabla ($array) {
 echo "<table border=1>";
 echo '<tr><th>Nom</th>
@@ -66,6 +53,7 @@ foreach ($array as $key => $value){
     echo "</table>";
 }
 
+# funcion 2
 function asignar_ids(&$array) {
     $maxId = 0;
     foreach ($array as $juego) {
@@ -99,6 +87,7 @@ function asignar_ids(&$array) {
     echo "</table>";
 }
 
+# funcion 3
 function eliminarJuegosPorFecha($archivoJson, $fechaInicio, $fechaFin) {
     carrega_fitxer($archivoJson, $juegos);
 
@@ -119,7 +108,7 @@ function eliminarJuegosPorFecha($archivoJson, $fechaInicio, $fechaFin) {
     file_put_contents($archivoJson, $jsonActualizado);
 }
 
-
+# funcion 4
 function agregarFechaExpiracion($juegos) {
     echo "<table border=1>";
     echo '<tr><th>Nom</th>
@@ -143,6 +132,7 @@ function agregarFechaExpiracion($juegos) {
     echo "</table>";
 }
 
+# funcion 5
 function verificarRegistrosRepetidos($jsonFilePath)
 {
     carrega_fitxer($jsonFilePath, $data);
@@ -157,6 +147,7 @@ function verificarRegistrosRepetidos($jsonFilePath)
     return 0;
 }
 
+# funcion 6
 function guardarRegistrosRepetidosEnJSON($jsonFilePath)
 {
     carrega_fitxer($jsonFilePath, $data);
@@ -181,6 +172,7 @@ function guardarRegistrosRepetidosEnJSON($jsonFilePath)
     }
 }
 
+# funcion 7
 function eliminarRepetits($nomFitxer) {
     carrega_fitxer($nomFitxer, $juegos);
 
@@ -197,7 +189,7 @@ function eliminarRepetits($nomFitxer) {
     tabla($juegosNou);
 }
 
-
+# funcion 8
 function encontrarJuegoMasAntiguoYMasModerno($array) {
     if ($array === null || empty($array)) {
         echo "No hay datos para procesar.\n";
@@ -222,6 +214,7 @@ function encontrarJuegoMasAntiguoYMasModerno($array) {
     print_r($juegoMasModerno);
 }
 
+# funcion 9
 function ordenarAlfabeticamenteYMostrar($array) {
     usort($array, function($a, $b) {
         return strcmp($a['Nom'], $b['Nom']);
@@ -246,6 +239,7 @@ function ordenarAlfabeticamenteYMostrar($array) {
     file_put_contents('JSON_Resultat_ordenat_alfabetic.json', $jsonOrdenado);
 }
 
+# funcion 10
 function contarVideojocsPerAny($array) {
     $contadores = array();
 

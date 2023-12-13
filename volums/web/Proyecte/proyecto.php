@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-</body>
 <?php
     include 'funciones.php';
     generarHTML();
 ?>
+    <video width="100%" height="600" controls>
+    <source src="video/SnapTik_App_7307681032726236422-HD.mp4" type="video/mp4">
+    </video>
+    
+</body>
 </html>
