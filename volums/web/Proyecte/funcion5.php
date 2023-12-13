@@ -22,5 +22,7 @@ if ($resultado === 1) {
     echo "No se encontraron registros repetidos.\n";
 }
 
+
+
 ?>
 </html>
