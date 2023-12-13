@@ -14,7 +14,7 @@ generarHTML();
 $juegos = array();
 carrega_fitxer("eliminarjocs.json", $juegos);
 tabla($juegos);
-#eliminarJuegosPorFecha('eliminarjocs.json', '2015-01-01', '2022-01-01');
+eliminarJuegosPorFecha('eliminarjocs.json', '2015-01-01', '2022-01-01');
 
 ?>
 </html>
