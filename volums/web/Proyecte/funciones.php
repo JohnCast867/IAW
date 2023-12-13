@@ -157,6 +157,7 @@ function verificarRegistrosRepetidos($jsonFilePath)
     return 0;
 }
 
+
 function guardarRegistrosRepetidosEnJSON($jsonFilePath)
 {
     carrega_fitxer($jsonFilePath, $data);
@@ -172,7 +173,7 @@ function guardarRegistrosRepetidosEnJSON($jsonFilePath)
         $jsonResultString = json_encode($registrosRepetidos, JSON_PRETTY_PRINT);
 
         if (file_put_contents($jsonResultFilePath, $jsonResultString)) {
-            echo "Registros repetidos guardados en $jsonResultFilePath\n";
+            echo "Registros repetidos guardados en $jsonResultFilePath :\n";
         } else {
             echo "Error al guardar el archivo JSON_Resultat_repetits.json\n";
         }

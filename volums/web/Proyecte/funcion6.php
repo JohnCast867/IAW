@@ -13,10 +13,13 @@ include "funciones.php";
 generarHTML();
 $juegos = array();
 carrega_fitxer("games.json", $juegos);
-tabla($juegos);
 
 $jsonFilePath = 'games.json';
 verificarRegistrosRepetidos($jsonFilePath);
 guardarRegistrosRepetidosEnJSON($jsonFilePath);
+
+carrega_fitxer("JSON_Resultat_repetits.json", $juegos);
+tabla($juegos);
+
 ?>
 </html>
