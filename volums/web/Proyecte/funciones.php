@@ -140,7 +140,6 @@ function verificarRegistrosRepetidos($jsonFilePath)
     $duplicados = array_unique(array_diff_assoc($nombresJuegos, array_unique($nombresJuegos)));
 
     if (!empty($duplicados)) {
-        echo "¡Hay registros repetidos!\n";
         return 1;
     }
 
