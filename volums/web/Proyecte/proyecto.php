@@ -11,11 +11,9 @@
     include 'funciones.php';
     generarHTML();
 ?>
-    <div id="video-container">
         <video controls autoplay loop>
             <source src="video/SnapTik_App_7307681032726236422-HD.mp4" type="video/mp4">
         </video>
-    </div>
     
 </body>
 </html>
