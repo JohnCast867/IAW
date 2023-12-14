@@ -1,7 +1,7 @@
 <html>
     <?php
     $var1=1;
-    $var2=66;
+    $var2=99;
 
     echo "<ol>";
     for($i=$var1;$i<=$var2;$i++){

@@ -16,48 +16,72 @@ function carrega_fitxer($nomfitxer, &$arrayAsociatiu2) {
 $persones = array();
 carrega_fitxer("prova_json.json", $persones);
 
-print_r($persones);
+//print_r($persones);
 
 //exercici 2
-function imprimir_array ($array) {
+function imprimirarrayPersones ($array)
+{
     echo "<table>";
-    echo '<tr><td>'."Nom".'</td>';
-    echo '<td>'."Edat".'</td>';
-    echo '<td>'."Ciutat".'</td></tr>';
-    foreach ($array as $persona => $value){
-             echo "<tr><td>". $value['nom']."</td>
-             <td>".$value ['edat']."</td>
-            <td>" . $value['ciutat'] ."</td></tr>";
-             }  
-             echo "</table>";
-                  echo '<style type="text/css">';
-                  echo "table { border: 2px solid black } ";
-                  echo "td{ border: 2px solid black;} ";
+    foreach ($array as $fila)
+    {
+        echo "<tr>";
+        echo "<td>";
+        echo $fila["nom"];
+        echo "</td>";
+        echo "<td>";
+        echo $fila["edat"];
+        echo "</td>";
+        echo "<td>";
+        echo $fila["ciutat"];
+        echo "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
 }
-
-
-
-// echo "<table>";
-// echo '<tr><td>'."Nom".'</td>';
-// echo '<td>'."Edat".'</td>';
-// echo '<td>'."Ciutat".'</td></tr>';
-// foreach ($arrayAsociatiu as $persona => $value){
-//     echo "<tr><td>". $value['nom']."</td>
-//     <td>".$value ['edat']."</td>
-//     <td>" . $value['ciutat'] ."</td></tr>";
-//     }
-//     echo "</table>";
-//     echo '<style type="text/css">';
-//     echo "table { border: 2px solid black } ";
-//     echo "td{ border: 2px solid black;} ";
+echo "Exercici 2";
+echo "<br>";
+imprimirarrayPersones($persones);
+echo "<br>";
 
 
 //exercici 3
 
-function recuperar_nom_persones($array,&$noms) {
+function recuperarNomsPersones ($array, &$arrayNoms)
+{
+    foreach ($array as $fila)
+    {
+        array_push($arrayNoms,$fila["nom"]);
+    }
+}
+echo "Exercici 3";
+echo "<br>";
+$resultatNoms= array();
+recuperarNomsPersones($persones,$resultatNoms);
+var_dump($resultatNoms);
+echo "<br>";
+echo "<br>";
 
+//exercici 4
+function existeixPersona ($array, $nom)
+{
+    foreach ($array as $fila)
+    {
+        if ($fila["nom"]== $nom)
+        {
+            return 1;
+        }
+    }
+    return 0;
 }
 
+echo "Exercici 4";
+echo "<br>";
+$nom_a_cercar="Toni";
+$trobat= existeixPersona($persones,$nom_a_cercar);
+if ($trobat==0)
+    echo "No hi és";
+else    
+    echo "Hi és"; 
 
 
 ?> 
