@@ -11,8 +11,8 @@ function carrega_fitxer($nomFitxer, &$arrayAsso) {
 
 function mostrarNotasAlumnos($nomFitxer) {
     foreach ($datos["assignatures"] as $asignatura) {
+        
         echo $asignatura["nom"] . ":\n";
-
         foreach ($asignatura["alumnes"] as $alumno => $nota) {
             echo $alumno . "\n";
             echo "  " . $asignatura["nom"] . ": " . $nota . "\n";

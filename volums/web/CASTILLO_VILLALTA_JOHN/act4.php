@@ -10,10 +10,10 @@
     <h1>Activitat 4</h1>
 </body>
 <?php
-include "funciones.php";
-$notas = array();
-carrega_fitxer("notes.json", $notas);
-print_r($notas);
-mostrarNotasAlumnos('notes.json');
+    include "funciones.php";
+    $notas = array();
+    carrega_fitxer("notes.json", $notas);
+    print_r($notas);
+    mostrarNotasAlumnos('notes.json');
 ?>
 </html>
