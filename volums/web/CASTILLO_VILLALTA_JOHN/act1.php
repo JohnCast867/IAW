@@ -51,8 +51,16 @@ $anyInici = 1990;
 $anyFi = 2010;
 $resultat = filtrargentperany($datesNaixement, $noms, $anyInici, $anyFi);
 
+
 echo "Persones nascudes entre els anys $anyInici i $anyFi:\n";
-print_r($resultat);
+echo "<br>";
+
+foreach ($resultat as $dni => $nombre) {
+    echo "$dni - $nombre\n";
+    echo "<br>";
+    }
+
+
 
 ?>
 

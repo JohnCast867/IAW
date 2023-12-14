@@ -3,11 +3,11 @@
 
 <body>
 
-    <h1>Exercici 2</h1>
+    <h1>Exercici 3</h1>
 
-    <?php
+<?php
 
-function generarHistograma($notes) {
+function crearHistorigrama($notes) {
     $histograma = array_fill(0, 11, 0);
 
     foreach ($notes as $nota) {
@@ -30,10 +30,10 @@ $notes = array(
     "890123456" => 1
 );
 
-$resultat = generarHistograma($notes);
+$resultat = crearHistorigrama($notes);
 
-echo "Histograma de les notes:\n";
-print_r($resultat);
+echo "Histograma:\n";
+echo implode(', ', $resultat);    
 
 ?>
 

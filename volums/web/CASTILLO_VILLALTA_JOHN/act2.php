@@ -7,19 +7,15 @@
 
 <?php
 
-function fusionarArray($array1, $array2, $arrayIndexada) {
+function arrayCompleto($array1, $array2) {
     $resultat = array();
-    foreach ($arrayIndexada as $info) {
-        $resultat[] = array(
-            $info,
-            $array1[$info],
-            $array2[$info]
-        );
+
+    foreach ($array1 as $dni => $dataNaixement) {
+        $resultat[] = array($dni, $dataNaixement, $array2[$dni]);
     }
 
     return $resultat;
 }
-        
 
 $datesNaixement = array(
     "123456789" => "1990-05-15",
@@ -47,26 +43,23 @@ $noms = array(
     "890123456" => "Bibiloni Sagreres, Bàrbara"
 );
 
-$arrayIndexada = array(
-    "123456789",
-    "987654321",
-    "456789012",
-    "321098765",
-    "789012345",
-    "543210987",
-    "210987654",
-    "876543210",
-    "234567890",
-    "890123456"
-);
+$arrayUnida = arrayCompleto($datesNaixement, $noms);
 
-$resultat = fusionarArray($datesNaixement, $noms, $arrayIndexada);
+echo "<table border='1'>";
+echo "<tr><th>DNI</th><th>Data Naixement</th><th>Nom</th></tr>";
 
-echo "Resultat:\n";
-print_r($resultat);
+foreach ($arrayUnida as $persona) {
+    echo "<tr>";
+    foreach ($persona as $dada) {
+        echo "<td>$dada</td>";
+    }
+    echo "</tr>";
+}
 
+echo "</table>";
 
 ?>
+
 
 
 </body>
