@@ -8,13 +8,14 @@
 <?php
 
 function crearHistorigrama($notes) {
-    $histograma = array_fill(0, 11, 0);
+    #array_fill index 0 elements 11(0 i 10) i valor 0
+    $historigrama = array_fill(0, 11, 0);
 
     foreach ($notes as $nota) {
-        $histograma[$nota]++;
+        $historigrama[$nota]++;
     }
 
-    return $histograma;
+    return $historigrama;
 }
 
 $notes = array(
@@ -32,7 +33,7 @@ $notes = array(
 
 $resultat = crearHistorigrama($notes);
 
-echo "Histograma:\n";
+echo "Historigrama:\n";
 echo implode(', ', $resultat);    
 
 ?>
