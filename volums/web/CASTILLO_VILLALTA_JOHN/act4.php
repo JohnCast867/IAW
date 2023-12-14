@@ -14,7 +14,6 @@ include "funciones.php";
 $notas = array();
 carrega_fitxer("notes.json", $notas);
 print_r($notas);
-#mostrarNotesAlumnes("notes.json");
-
+mostrarNotasAlumnos('notes.json');
 ?>
 </html>

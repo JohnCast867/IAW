@@ -9,13 +9,15 @@ function carrega_fitxer($nomFitxer, &$arrayAsso) {
     }
 }
 
-function mostrarNotesAlumnes($nomFitxer) {
-    foreach ($dades['assignatures'] as $assignatura) {
-        foreach ($assignatura['alumnes'] as $alumne => $nota) {
-            echo $alumne . "\n";
-            echo $assignatura['nom'] . ": " . $nota . "\n";
+function mostrarNotasAlumnos($nomFitxer) {
+    foreach ($datos["assignatures"] as $asignatura) {
+        echo $asignatura["nom"] . ":\n";
+
+        foreach ($asignatura["alumnes"] as $alumno => $nota) {
+            echo $alumno . "\n";
+            echo "  " . $asignatura["nom"] . ": " . $nota . "\n";
         }
-        echo "\n"; 
+        echo "\n";
     }
 }
 
