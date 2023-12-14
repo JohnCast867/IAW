@@ -7,7 +7,7 @@
 
 <?php
 
-function unirArrays($array1, $array2, $arrayIndexada) {
+function fusionarArray($array1, $array2, $arrayIndexada) {
     $resultat = array();
     foreach ($arrayIndexada as $info) {
         $resultat[] = array(
@@ -19,15 +19,6 @@ function unirArrays($array1, $array2, $arrayIndexada) {
 
     return $resultat;
 }
-
-//funcion tabla array resultat
-$dadesTabla = function($fila) {
-    echo "<tr>";
-    foreach ($fila as $element) {
-        echo "<td>" . $element . "</td>";
-        }
-        echo "</tr>\n";
-        };
         
 
 $datesNaixement = array(
@@ -69,7 +60,7 @@ $arrayIndexada = array(
     "890123456"
 );
 
-$resultat = unirArrays($datesNaixement, $noms, $arrayIndexada);
+$resultat = fusionarArray($datesNaixement, $noms, $arrayIndexada);
 
 echo "Resultat:\n";
 print_r($resultat);

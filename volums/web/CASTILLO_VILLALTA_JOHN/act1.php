@@ -7,18 +7,18 @@
 
 <?php
 
-function filtrarPerAnyNaixement($datesNaixement, $noms, $anyInici, $anyFi) {
-    $personesFiltrades = array();
+function filtrargentperany($datesNaixement, $noms, $anyInici, $anyFi) {
+    $filtrePersones = array();
 
     foreach ($datesNaixement as $dni => $dataNaixement) {
         $anyNaixement = date("Y", strtotime($dataNaixement));
 
         if ($anyNaixement >= $anyInici && $anyNaixement <= $anyFi) {
-            $personesFiltrades[$dni] = $noms[$dni];
+            $filtrePersones[$dni] = $noms[$dni];
         }
     }
 
-    return $personesFiltrades;
+    return $filtrePersones;
 }
 
 $datesNaixement = array(
@@ -49,7 +49,7 @@ $noms = array(
 
 $anyInici = 1990;
 $anyFi = 2010;
-$resultat = filtrarPerAnyNaixement($datesNaixement, $noms, $anyInici, $anyFi);
+$resultat = filtrargentperany($datesNaixement, $noms, $anyInici, $anyFi);
 
 echo "Persones nascudes entre els anys $anyInici i $anyFi:\n";
 print_r($resultat);
