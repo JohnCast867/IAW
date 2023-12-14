@@ -7,14 +7,14 @@
 
 <?php
 
-function filtrargentperany($datesNaixement, $noms, $anyInici, $anyFi) {
+function FiltrarGentAny($datesNaixement, $noms, $anyInici, $anyFi) {
     $filtrePersones = array();
 
-    foreach ($datesNaixement as $dni => $dataNaixement) {
+    foreach ($datesNaixement as $DNI => $dataNaixement) {
         $anyNaixement = date("Y", strtotime($dataNaixement));
 
         if ($anyNaixement >= $anyInici && $anyNaixement <= $anyFi) {
-            $filtrePersones[$dni] = $noms[$dni];
+            $filtrePersones[$DNI] = $noms[$DNI];
         }
     }
 
@@ -49,14 +49,14 @@ $noms = array(
 
 $anyInici = 1990;
 $anyFi = 2010;
-$resultat = filtrargentperany($datesNaixement, $noms, $anyInici, $anyFi);
+$resultat = FiltrarGentAny($datesNaixement, $noms, $anyInici, $anyFi);
 
 
 echo "Persones nascudes entre els anys $anyInici i $anyFi:\n";
 echo "<br>";
 
-foreach ($resultat as $dni => $nombre) {
-    echo "$dni - $nombre\n";
+foreach ($resultat as $DNI => $nombre) {
+    echo "$DNI - $nombre\n";
     echo "<br>";
     }
 
