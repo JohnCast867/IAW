@@ -7,19 +7,28 @@
 
 <?php
 
-function filtrarPerAnyNaixement($datesNaixement, $noms, $anyInici, $anyFi) {
-    $personesFiltrades = array();
-
-    foreach ($datesNaixement as $dni => $dataNaixement) {
-        $anyNaixement = date("Y", strtotime($dataNaixement));
-
-        if ($anyNaixement >= $anyInici && $anyNaixement <= $anyFi) {
-            $personesFiltrades[$dni] = $noms[$dni];
-        }
+function unirArrays($array1, $array2, $arrayIndexada) {
+    $resultat = array();
+    foreach ($arrayIndexada as $info) {
+        $resultat[] = array(
+            $info,
+            $array1[$info],
+            $array2[$info]
+        );
     }
 
-    return $personesFiltrades;
+    return $resultat;
 }
+
+//funcion tabla array resultat
+$dadesTabla = function($fila) {
+    echo "<tr>";
+    foreach ($fila as $element) {
+        echo "<td>" . $element . "</td>";
+        }
+        echo "</tr>\n";
+        };
+        
 
 $datesNaixement = array(
     "123456789" => "1990-05-15",
@@ -47,12 +56,24 @@ $noms = array(
     "890123456" => "Bibiloni Sagreres, Bàrbara"
 );
 
-$anyInici = 1990;
-$anyFi = 2010;
-$resultat = filtrarPerAnyNaixement($datesNaixement, $noms, $anyInici, $anyFi);
+$arrayIndexada = array(
+    "123456789",
+    "987654321",
+    "456789012",
+    "321098765",
+    "789012345",
+    "543210987",
+    "210987654",
+    "876543210",
+    "234567890",
+    "890123456"
+);
 
-echo "Persones nascudes entre els anys $anyInici i $anyFi:\n";
+$resultat = unirArrays($datesNaixement, $noms, $arrayIndexada);
+
+echo "Resultat:\n";
 print_r($resultat);
+
 
 ?>
 
