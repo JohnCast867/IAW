@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="processar_prova4.php" method="Get">
+<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="Get">
 Nom: <input type="text" name="name"><br>
 Llinatge1: <input type="text" name="Llinatge1"><br>
 Llinatge2: <input type="text" name="Llinatge2"><br>
@@ -26,6 +26,7 @@ Aficions: <br>
 
 <input type="submit">
 </form>
+
 
 </body>
 </html>
