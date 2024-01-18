@@ -11,9 +11,9 @@ Poblacio: <br>
 <input type="radio" id="2" name="poblacio" value="Palma">
 <label for="2">Palma</label><br>
 Aficions: <br>
-<input type="checkbox" id="aficio1" name="aficio[]" value="aficio1">
+<input type="checkbox" id="aficio1" name="aficio1" value="aficio1">
 <label for="aficio1">aficio1</label><br>
-<input type="checkbox" id="aficio2" name="aficio[]" value="aficio2">
+<input type="checkbox" id="aficio2" name="aficio2" value="aficio2">
 <label for="aficio2">aficio2</label><br>
 
 <label for="centre">Centre:</label>
