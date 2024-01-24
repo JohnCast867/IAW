@@ -1,32 +1,32 @@
 <?php
-class Calculadora 
+class Tenda
 {
-    function suma($a, $b) 
-    { return $a + $b; }
-
-    function resta($a, $b)
-    { return $a - $b; }
+    public $nom;
+    public $preu;
+    public $stock;
     
-    function divisio($a, $b)
-    {return $a / $b;}
+    function afegirProducte($n, $p, $s) {
+        if ($this->comprovarNombre($n)) {
+            $this->nom = $n;
+            $this->preu = $p;
+            $this->stock = $this->comprovarStock($s);
+            } else {
+                echo "Error: Nombre incorrecte.";
+                };
+                }
 
-    function multiplicacio($a, $b)
-    {return $a * $b;}
-
-    function potencia($a, $b)
-    {return pow($a,$b);}
-
-    function factorial($a)
-    {if ($a ==1 )
-        {return "No se puede calcular el factorial de cero o uno.";}
-        else
-        {$fact=1; for($i = 1 ; $i <= $a ; $i++ ){ $fact=$fact*$i; } return $fact;}
-    }
-            
-            
+    function comprar($quantitat){
+        if ($this->comprovarQuantitat($quantitat)){
+            return $this->vendreProductes($quantitat);
+            }else{
+                echo "No hi ha suficient stock per a aquesta quantitat.";
+                }
+                }
+    
+    
 }
 
-$calculator = new Calculadora;
+$Tienda = new Tenda;
 echo "Calcul: ". $calculator->factorial(4);
 
 ?>

@@ -17,11 +17,8 @@ class Calculadora
     {return pow($a,$b);}
 
     function factorial($a)
-    {if ($a ==1 )
-        {return "No se puede calcular el factorial de cero o uno.";}
-        else
-        {$fact=1; for($i = 1 ; $i <= $a ; $i++ ){ $fact=$fact*$i; } return $fact;}
-    }
+    {$fact=1; for($i = 1 ; $i <= $a ; $i++ ){ $fact=$fact*$i; } return $fact;}
+    
             
             
 }
