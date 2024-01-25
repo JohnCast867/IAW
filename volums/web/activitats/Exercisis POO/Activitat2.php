@@ -24,6 +24,6 @@ class Calculadora
 }
 
 $calculator = new Calculadora;
-echo "Calcul: ". $calculator->factorial(4);
+echo "Calcul: ". $calculator->factorial(5);
 
 ?>
