@@ -27,7 +27,7 @@ if (($_SERVER["REQUEST_METHOD"] == "GET") && ($_GET["name"]!= null)){
   try {
     
     $sql = "INSERT INTO CLIENT (nom, llinatge1, llinatge2, email)
-    VALUES ('$name', '$llinatge1', '$llinatge1', '$email')";
+    VALUES ('$name', '$llinatge1', '$llinatge2', '$email')";
     $conn->exec($sql);
     echo "New record created successfully";
     $last_id = $conn->lastInsertId();
