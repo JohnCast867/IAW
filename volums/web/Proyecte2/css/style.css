@@ -1,0 +1,125 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.titulo {
+  background-image: url(../imatges/nature-3656121_1920.jpg);
+  background-size: cover;
+}
+
+
+h1 {
+  margin: 20px;
+  font-family: 'Lato', sans-serif;
+  border-style: solid;
+  padding: 3px;
+  display: inline-block;
+  color: white;
+}
+
+
+h2 {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  background-color: black;
+  text-align: center;
+  padding: 13px 0;
+  position: sticky;
+  top: 0;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 3.5px;
+  margin: 3.5px 0;
+  width: 240px;
+  line-height: 20px;
+}
+
+nav a:hover {
+  transition: background-color 0.3s;
+  background: linear-gradient(45deg, #001a33, #002b4d, #004080, #00509e, #0066cc, #0077b3, #0088a8, #009999);
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  video {
+    width: 50%;
+    margin: 0 25%;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+  }
+
+  @media (min-width: 768px) {
+
+    .wrapper {
+        max-width: 1000px;
+        min-height: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 200px;
+    }
+
+    nav ul li{
+        margin: 0px 10px;
+    }
+
+    .titulo {
+      background-image: url(../imatges/nature-3656121_1920\ \(1\).jpg);
+      width: 100%;
+      height: 220px;
+    }
+    
+}
