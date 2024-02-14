@@ -103,3 +103,4 @@ $tenda->canviarPreuProducte("Telèfon intel·ligent", 550);
 $tenda->imprimirStock();
 $tenda->augmentarStockProducte("Ordinador portàtil", 5);
 $tenda->imprimirStock();
+?>
