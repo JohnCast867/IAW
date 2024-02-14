@@ -4,12 +4,13 @@ include "db.php";
 try {
     // sql to create table
     $sql = "CREATE TABLE VIDEOJOC (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
-    email VARCHAR(50),
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      id INT PRIMARY KEY,
+      nom VARCHAR(255),
+      data_llançament DATE,
+      pegi INT
     )";
+
+    a
   
     // use exec() because no results are returned
     $conn->exec($sql);
