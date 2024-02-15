@@ -16,12 +16,12 @@ class Base_de_datos_videojocs {
 }
 
 public function insertar_plataforma($servername, $username, $password, $nom) {
+    
+  $conn = $this->connectar_bd($servername,$username,$password);
     try {
         $sql = "INSERT INTO VIDEOJOCS.PLATAFORMA (nom) VALUES ('$nom')";
-        // Utilizar exec() ya que no se esperan resultados
-        echo $sql;
-        $this->conn->exec($sql);
-        $last_id = $this->conn->lastInsertId();
+        $conn->exec($sql);
+        $last_id = $conn->lastInsertId();
         echo "Registro insertado correctamente en la tabla plataforma con ID: " . $last_id . "<br>";
     } catch(PDOException $e) {
         echo "Error al insertar registro en la tabla plataforma: " . $e->getMessage();
@@ -30,10 +30,12 @@ public function insertar_plataforma($servername, $username, $password, $nom) {
 
 // Método para insertar valores en la tabla desarrollador
 public function insertar_desarrollador($servername, $username, $password, $nom) {
+
+  $conn = $this->connectar_bd($servername,$username,$password);
     try {
         $sql = "INSERT INTO VIDEOJOCS.DESENVOLUPADOR (nom) VALUES ('$nom')";
-        $this->conn->exec($sql);
-        $last_id = $this->conn->lastInsertId();
+        $conn->exec($sql);
+        $last_id = $conn->lastInsertId();
         echo "Registro insertado correctamente en la tabla desarrollador con ID: " . $last_id . "<br>";
     } catch(PDOException $e) {
         echo "Error al insertar registro en la tabla desarrollador: " . $e->getMessage();
@@ -42,15 +44,16 @@ public function insertar_desarrollador($servername, $username, $password, $nom) 
 
 // Método para insertar valores en la tabla genero
 public function insertar_genero($servername, $username, $password, $nom) {
+
+  $conn = $this->connectar_bd($servername,$username,$password);
     try {
         $sql = "INSERT INTO VIDEOJOCS.GENERE (nom) VALUES ('$nom')";
-        $this->conn->exec($sql);
-        $last_id = $this->conn->lastInsertId();
+        $conn->exec($sql);
+        $last_id = $conn->lastInsertId();
         echo "Registro insertado correctamente en la tabla genero con ID: " . $last_id . "<br>";
     } catch(PDOException $e) {
         echo "Error al insertar registro en la tabla genero: " . $e->getMessage();
     }
 }
 }
-
 
