@@ -26,7 +26,7 @@ try {
     -- Table `VIDEOJOCS`.`DESENVOLUPADOR`
     -- -----------------------------------------------------
     CREATE TABLE IF NOT EXISTS `VIDEOJOCS`.`DESENVOLUPADOR` (
-      `id` INT(11) NOT NULL,
+      `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
     ENGINE = InnoDB;
@@ -36,7 +36,7 @@ try {
     -- Table `VIDEOJOCS`.`GENERE`
     -- -----------------------------------------------------
     CREATE TABLE IF NOT EXISTS `VIDEOJOCS`.`GENERE` (
-      `id` INT(11) NOT NULL,
+      `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
     ENGINE = InnoDB;
@@ -46,7 +46,7 @@ try {
     -- Table `VIDEOJOCS`.`PLATAFORMA`
     -- -----------------------------------------------------
     CREATE TABLE IF NOT EXISTS `VIDEOJOCS`.`PLATAFORMA` (
-      `id` INT(11) NOT NULL,
+      `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
     ENGINE = InnoDB;
@@ -56,7 +56,7 @@ try {
     -- Table `VIDEOJOCS`.`VIDEOJOC`
     -- -----------------------------------------------------
     CREATE TABLE IF NOT EXISTS `VIDEOJOCS`.`VIDEOJOC` (
-      `id` INT(11) NOT NULL,
+      `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       `data_llançament` DATE NULL DEFAULT NULL,
       `pegi` INT(11) NULL DEFAULT NULL,

@@ -319,8 +319,11 @@ foreach ($data as $game) {
     $plataforma = $game['Plataforma'];
     $llançament = $game['Llançament'];
     
-    $sql = "INSERT INTO VIDEOJOC (Nom, data_llançament)
-            VALUES ('$nom','$llançament')";
+    $sql = "INSERT INTO DESENVOLUPADOR (nom)
+            VALUES ('$desenvolupador');
+            INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
+            VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
+            ";
     
     if ($conn->query($sql) === TRUE) {
         echo "Registro insertado correctamente";
