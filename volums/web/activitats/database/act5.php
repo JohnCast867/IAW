@@ -5,7 +5,7 @@ class Client {
   public function connectar_bd ($servername,$username,$password)
   {
     try {
-      $conn = new PDO("mysql:host=$servername;dbname=CLIENT", $username, $password);
+      $conn = new PDO("mysql:host=$servername;dbname=VIDEOJOCS", $username, $password);
       // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       echo "Connected successfully";
@@ -19,7 +19,7 @@ public function inserir ($servername, $username, $password, $nom, $llinatge1, $l
     $conn = $this->connectar_bd($servername,$username,$password);
       try
       {
-        $sql = "INSERT INTO CLIENT (nom, llinatge1, llinatge2, email) VALUES ('$nom','$llinatge1','$llinatge2','$email')";
+        $sql = "INSERT INTO VIDEOJOCS (nom, llinatge1, llinatge2, email) VALUES ('$nom','$llinatge1','$llinatge2','$email')";
         // use exec() because no results are returned
         $conn->exec($sql);
         $last_id = $conn->lastInsertId();
@@ -35,7 +35,7 @@ public function consultaTots ($servername,$username,$password)
     $conn = $this->connectar_bd($servername,$username,$password);
     
     try {
-       $stmt = $conn->prepare("SELECT * FROM CLIENT");
+       $stmt = $conn->prepare("SELECT * FROM VIDEOJOCS");
        $result = $stmt->execute();
        $conn=null;
        return($stmt); 
@@ -77,7 +77,7 @@ function eliminar ($id)
 try {
   
   // sql to delete a record
-  $sql = "DELETE FROM CLIENT WHERE id='$id'";
+  $sql = "DELETE FROM VIDEOJOCS WHERE id='$id'";
 
   // use exec() because no results are returned
   $conn->exec($sql);

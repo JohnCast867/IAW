@@ -1,16 +1,16 @@
 <?php
-include db.php;
+include "DBACCES.php";
 
 // Obtener los datos del formulario
-$nombre = $_POST['nombre'];
-$desarrollador = $_POST['desarrollador'];
+$nom = $_POST['nom'];
+$Desenvolupador = $_POST['Desenvolupador'];
 $plataforma = $_POST['plataforma'];
-$lanzamiento = $_POST['lanzamiento'];
+$Llançament = $_POST['Llançament'];
 $pegi = $_POST['pegi'];
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO videojuegos (nombre, desarrollador, plataforma, lanzamiento, pegi)
-VALUES ('$nombre', '$desarrollador', '$plataforma', '$lanzamiento', '$pegi')";
+$sql = "INSERT INTO VIDEOJOCS (nom, Desenvolupador, plataforma, Llançament, pegi)
+VALUES ('$nom', '$Desenvolupador', '$plataforma', '$Llançament', '$pegi')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Nuevo videojuego insertado correctamente";
