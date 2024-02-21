@@ -323,12 +323,7 @@ $desenvolupadors_array = array_unique($desenvolupadors_array);
 
 foreach ($desenvolupadors_array as $desenvolupador) {
     $sql = "INSERT INTO DESENVOLUPADOR (nom) VALUES ('$desenvolupador')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro insertado correctamente: $desenvolupador <br>";
-    } else {
-        echo "Error al insertar registro: " . $conn->error . "<br>";
-    }
+    echo "Registro insertado correctamente: $desenvolupador <br>";
 }
 
 foreach ($data as $game) {
@@ -340,14 +335,9 @@ foreach ($data as $game) {
   $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
           VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
           ";
-  
-  if ($conn->query($sql) === TRUE) {
-      echo "Registro insertado correctamente";
-  } else {
-      echo "Error al insertar registro: " . $conn->error;
-  }
+  echo "Registro insertado correctamente: $nom <br>";
 }
 
-$conn->close();
+$conn = null;
 
 ?>
