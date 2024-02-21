@@ -334,6 +334,7 @@ foreach ($data as $game) {
   
   $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
           VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
+          
           ";
   echo "Registro insertado correctamente: $nom <br>";
 }
