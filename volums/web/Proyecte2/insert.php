@@ -313,23 +313,39 @@ $json_data = '[
 
 $data = json_decode($json_data, true);
 
+$desenvolupadors_array = array();
+
 foreach ($data as $game) {
-    $nom = $game['Nom'];
-    $desenvolupador = $game['Desenvolupador'];
-    $plataforma = $game['Plataforma'];
-    $llançament = $game['Llançament'];
-    
-    $sql = "INSERT INTO DESENVOLUPADOR (nom)
-            VALUES ('$desenvolupador');
-            INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
-            VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
-            ";
-    
+    $desenvolupadors_array[] = $game['Desenvolupador'];
+}
+
+$desenvolupadors_array = array_unique($desenvolupadors_array);
+
+foreach ($desenvolupadors_array as $desenvolupador) {
+    $sql = "INSERT INTO DESENVOLUPADOR (nom) VALUES ('$desenvolupador')";
+
     if ($conn->query($sql) === TRUE) {
-        echo "Registro insertado correctamente";
+        echo "Registro insertado correctamente: $desenvolupador <br>";
     } else {
-        echo "Error al insertar registro: " . $conn->error;
+        echo "Error al insertar registro: " . $conn->error . "<br>";
     }
+}
+
+foreach ($data as $game) {
+  $nom = $game['Nom'];
+  $desenvolupador = $game['Desenvolupador'];
+  $plataforma = $game['Plataforma'];
+  $llançament = $game['Llançament'];
+  
+  $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
+          VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
+          ";
+  
+  if ($conn->query($sql) === TRUE) {
+      echo "Registro insertado correctamente";
+  } else {
+      echo "Error al insertar registro: " . $conn->error;
+  }
 }
 
 $conn->close();
