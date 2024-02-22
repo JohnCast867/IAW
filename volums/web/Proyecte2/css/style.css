@@ -31,11 +31,16 @@ h1 {
   color: white;
 }
 
+div h2 {
+  padding: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
 
 h2 {
   padding: 20px;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 nav {
