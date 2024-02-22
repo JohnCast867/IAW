@@ -1,6 +1,8 @@
 <?php
-include "../DBACCES.php";
+include "DBACCES.php";
 include "clase_db.php";
+include "funciones.php";
+generarHTML();
 
 // Función para limpiar y validar datos
 function test_input($data) {
@@ -19,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $basedatos = new Base_de_datos_videojocs();
     
     // Llamar al método inserir para insertar el cliente en la base de datos
-    $basedatos->insertar_genero($servername, $username, $password, $nom);
+    $basedatos->insertar_desarrollador($servername, $username, $password, $nom);
 }
 ?>
 
@@ -29,9 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Formulario de nueva genero</h1>
+    <h1>Formulario de nueva desarrollador</h1>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required><br>
