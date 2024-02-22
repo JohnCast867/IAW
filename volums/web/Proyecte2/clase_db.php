@@ -56,17 +56,22 @@ public function insertar_genero($servername, $username, $password, $nom) {
     }
 }
 
-public function consulta($servername, $username, $password, $tabla, $nom) {
+public function consulta($servername, $username, $password, $columna, $tabla) {
 
-  $conn = $this->connectar_bd($servername,$username,$password);
+  $conn = $this->connectar_bd($servername, $username, $password);
   try {
-    $sql = "SELECT FROM VIDEOJOCS.$tabla (nom) VALUES ('$nom')";
-    $conn->exec($sql);
-    $last_id = $conn->lastInsertId();
-    echo "Registro insertado correctamente en la tabla genero con ID: " . $last_id . "<br>";
-} catch(PDOException $e) {
-    echo "Error al insertar registro en la tabla genero: " . $e->getMessage();
-}
+      $sql = "SELECT $columna FROM VIDEOJOCS.$tabla";
+      $result = $conn->query($sql);
+      
+      // Manejar los resultados de la consulta, por ejemplo:
+      echo "<table>";
+      while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          echo "<tr><td>".$row[$columna]."</td></tr>";
+      }
+      echo "</table>";
+  } catch(PDOException $e) {
+      echo "Error al seleccionar los datos: " . $e->getMessage();
+  }
 }
 }
 
