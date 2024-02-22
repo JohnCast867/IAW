@@ -55,5 +55,18 @@ public function insertar_genero($servername, $username, $password, $nom) {
         echo "Error al insertar registro en la tabla genero: " . $e->getMessage();
     }
 }
+
+public function consulta($servername, $username, $password, $tabla, $nom) {
+
+  $conn = $this->connectar_bd($servername,$username,$password);
+  try {
+    $sql = "SELECT FROM VIDEOJOCS.$tabla (nom) VALUES ('$nom')";
+    $conn->exec($sql);
+    $last_id = $conn->lastInsertId();
+    echo "Registro insertado correctamente en la tabla genero con ID: " . $last_id . "<br>";
+} catch(PDOException $e) {
+    echo "Error al insertar registro en la tabla genero: " . $e->getMessage();
+}
+}
 }
 
