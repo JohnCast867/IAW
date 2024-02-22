@@ -3,19 +3,21 @@
 function generarHTML() {
     $html = '<header>
         <div class="titulo">
-            <h1>Proyecto 1era avaluacion</h1>
-            <h2>John castillo Villalta y Nicolas Gimenez Mansilla</h2>
+            <h1>Proyecte 2a avaluacion</h1>
+            <h2>JOHN CASTILLO y NICOLAS GIMENEZ</h2>
         </div>
     </header>
     <nav>
         <div>
             <ul>
-                <li><a class="link" href="proyecto.php">Inicio</a></li> 
-                <li><a class="link" href="funcion1.php">Funcionalidad 1</a></li>
-                <li><a class="link" href="desarrollador.php">Funcionalidad 2</a></li>
-                <li><a class="link" href="funcion3.php">Funcionalidad 3</a></li>
-                <li><a class="link" href="funcion4.php">Funcionalidad 4</a></li>
-                <li><a class="link" href="funcion5.php">Funcionalidad 5</a></li>
+                <li><a class="link" href="proyecto.php">INICI</a></li> 
+                <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
+                <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
+                <li><a class="link" href="genero.php">GENERES</a></li>
+                <li><a class="link" href="funcion5.php">INSERIR</a></li>
+                <li><a class="link" href="funcion5.php">CONSULTAR</a></li>
+                <li><a class="link" href="funcion5.php">ELIMINAR</a></li>
+
             </ul>
         </div>
     </nav>';

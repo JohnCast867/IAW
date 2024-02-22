@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Formulario de nueva desarrollador</h1>
+    <h2>Formulario de nueva desarrollador</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required><br>
