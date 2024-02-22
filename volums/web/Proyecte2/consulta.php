@@ -1,17 +1,28 @@
-<html>
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Consulta de Base de Datos</title>
+    <title>Consulta y Eliminación de Entidades</title>
 </head>
 <body>
-    <h2>Consulta de Base de Datos</h2>
+    <h2>Consulta y Eliminación de Entidades</h2>
     <form method="post">
-        <label for="columna">Columna:</label>
-        <input type="text" name="columna" id="columna">
-        <label for="tabla">Tabla:</label>
-        <input type="text" name="tabla" id="tabla">
-        <input type="submit" name="submit" value="Consultar">
+        <label for="entidad">Seleccione la entidad:</label>
+        <select name="entidad" id="entidad">
+            <option value="PLATAFORMA">Plataforma</option>
+            <option value="DESENVOLUPADOR">Empresa</option>
+            <option value="GENERE">Género</option>
+        </select>
+        <br>
+        <label for="accion">Seleccione la acción:</label>
+        <select name="accion" id="accion">
+            <option value="consulta">Consulta</option>
+            <option value="eliminacion">Eliminación</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
     </form>
+</body>
+</html>
 <?php
 include "DBACCES.php";
 include "clase_db.php";
@@ -27,15 +38,20 @@ function test_input($data) {
 
 // Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $columna = test_input($_POST['columna']);
-    $tabla = test_input($_POST['tabla']);
+    $entidad = test_input($_POST['entidad']);
+    $accion = test_input($_POST['accion']);
 
     // Instanciar la clase Base_de_datos_videojocs
     $basedatos = new Base_de_datos_videojocs();
     
-    // Llamar al método consulta para realizar la consulta
-    $basedatos->consulta($servername, $username, $password, $columna, $tabla);
+    if ($accion === "consulta") {
+        // Llamar al método consulta para realizar la consulta
+        $basedatos->consulta($servername, $username, $password, $entidad);
+    } elseif ($accion === "eliminacion") {
+        // Llamar al método eliminar para realizar la eliminación
+        $basedatos->eliminar($servername, $username, $password, $entidad);
+    }
 }
+
 ?>
 

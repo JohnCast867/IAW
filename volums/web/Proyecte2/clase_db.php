@@ -56,22 +56,43 @@ public function insertar_genero($servername, $username, $password, $nom) {
     }
 }
 
-public function consulta($servername, $username, $password, $columna, $tabla) {
-
+public function consulta($servername, $username, $password, $entidad) {
   $conn = $this->connectar_bd($servername, $username, $password);
   try {
-      $sql = "SELECT $columna FROM VIDEOJOCS.$tabla";
+      $sql = "SELECT * FROM VIDEOJOCS.$entidad";
       $result = $conn->query($sql);
       
       // Manejar los resultados de la consulta, por ejemplo:
-      echo "<table>";
+      echo "<h3>Resultados de la consulta de $entidad:</h3>";
+      echo "<table border='1'>";
       while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-          echo "<tr><td>".$row[$columna]."</td></tr>";
+          echo "<tr>";
+          foreach ($row as $columna => $valor) {
+              echo "<td>".$columna.": ".$valor."</td>";
+          }
+          echo "</tr>";
       }
       echo "</table>";
   } catch(PDOException $e) {
       echo "Error al seleccionar los datos: " . $e->getMessage();
   }
 }
-}
 
+public function eliminar($servername, $username, $password, $entidad) {
+  $conn = $this->connectar_bd($servername, $username, $password);
+  try {
+      // Consulta para eliminar todos los registros de la entidad seleccionada
+      $sql = "DELETE FROM VIDEOJOCS.$entidad";
+      $result = $conn->exec($sql);
+      
+      // Verificar si se realizó la eliminación
+      if ($result !== false) {
+          echo "<p>Se han eliminado todos los registros de $entidad correctamente.</p>";
+      } else {
+          echo "<p>No se pudo eliminar los registros de $entidad.</p>";
+      }
+  } catch(PDOException $e) {
+      echo "Error al eliminar los datos: " . $e->getMessage();
+  }
+}
+}
