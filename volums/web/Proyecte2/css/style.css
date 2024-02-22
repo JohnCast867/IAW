@@ -56,24 +56,31 @@ nav ul {
   list-style: none;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 3.5px;
-  margin: 3.5px 0;
-  width: 240px;
-  line-height: 20px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
 
 nav a:hover {
   transition: background-color 0.3s;
   background: linear-gradient(45deg, #001a33, #002b4d, #004080, #00509e, #0066cc, #0077b3, #0088a8, #009999);
+  display: block;
 
 }
 

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </head>
 <body>
-    <h2>Formulario de nueva genero</h2>
+    <h2>Formulario de nuevo genero</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required><br>
