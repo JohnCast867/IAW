@@ -1,8 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taules</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 <?php
-include "db.php";
+    include 'funciones.php';
+    generarHTML();
+    include "db.php";
 try {
-    // sql to create table
     $sql = "-- MySQL Workbench Forward Engineering
 
     SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -120,7 +129,6 @@ try {
     SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
     ";
 
-    // use exec() because no results are returned
     $conn->exec($sql);
     echo "Table created successfully";
   } catch(PDOException $e) {
@@ -128,4 +136,8 @@ try {
   }
   
   $conn = null;
-  ?>
+?>
+
+</body>
+</html>
+

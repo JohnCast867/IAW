@@ -85,6 +85,13 @@ nav a:hover {
   display: block;
 }
 
+img {
+  display: block;
+  margin: 1% auto;
+  text-align: center;
+  width: 50%;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

@@ -95,4 +95,6 @@ public function eliminar($servername, $username, $password, $entidad) {
       echo "Error al eliminar los datos: " . $e->getMessage();
   }
 }
+
+
 }
