@@ -17,8 +17,9 @@ html {
 }
 
 .titulo {
-  background-image: url(../imatges/nature-3656121_1920.jpg);
-  background-size: cover;
+  background-image: url(../imatges/elden.jpg);
+  background-size:cover;
+  
 }
 
 
@@ -80,9 +81,8 @@ li a {
 
 nav a:hover {
   transition: background-color 0.3s;
-  background: linear-gradient(45deg, #001a33, #002b4d, #004080, #00509e, #0066cc, #0077b3, #0088a8, #009999);
+  background: linear-gradient(360deg, #FFD700, #FFBF00, #FFA500, #FF8C00, #FF7F50);
   display: block;
-
 }
 
 table {
@@ -181,7 +181,7 @@ input[type="text"] {
   }
 
   .titulo {
-    background-image: url(../imatges/nature-3656121_1920\ \(1\).jpg);
+    background-image: url(../imatges/elden.jpg);
     width: 100%;
     height: 220px;
   }
