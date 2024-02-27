@@ -10,7 +10,6 @@ function generarHTML() {
     <nav>
         <div>
             <ul>
-                <li><a class="link" href="proyecto.php">INICI</a></li> 
                 <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
                 <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
                 <li><a class="link" href="genero.php">GENERES</a></li>

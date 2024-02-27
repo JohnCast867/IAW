@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Consulta y Eliminación de Entidades</title>
-</head>
-<body>
-    <h2>Consulta y Eliminación de Entidades</h2>
-    <form method="post">
-        <label for="entidad">Seleccione la entidad:</label>
-        <select name="entidad" id="entidad">
-            <option value="PLATAFORMA">Plataforma</option>
-            <option value="DESENVOLUPADOR">Empresa</option>
-            <option value="GENERE">Género</option>
-        </select>
-        <br>
-        <label for="accion">Seleccione la acción:</label>
-        <select name="accion" id="accion">
-            <option value="consulta">Consulta</option>
-            <option value="eliminacion">Eliminación</option>
-        </select>
-        <br>
-        <input type="submit" value="Enviar">
-    </form>
-</body>
-</html>
 <?php
 include "DBACCES.php";
 include "clase_db.php";
 include "funciones.php";
+generarHTML();
 
 // Función para limpiar y validar datos
 function test_input($data) {
@@ -54,4 +30,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta y Eliminación de Entidades</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Consulta y Eliminación de Entidades</h2>
+    <form method="post">
+        <label for="entidad">Seleccione la entidad:</label>
+        <select name="entidad" id="entidad">
+            <option value="PLATAFORMA">Plataforma</option>
+            <option value="DESENVOLUPADOR">Empresa</option>
+            <option value="GENERE">Género</option>
+        </select>
+        <br>
+        <label for="accion">Seleccione la acción:</label>
+        <select name="accion" id="accion">
+            <option value="consulta">Consulta</option>
+            <option value="eliminacion">Eliminación</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
 
