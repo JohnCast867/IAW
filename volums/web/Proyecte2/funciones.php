@@ -13,7 +13,6 @@ function generarHTML() {
                 <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
                 <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
                 <li><a class="link" href="genero.php">GENERES</a></li>
-                <li><a class="link" href="insertar_videojuego.php">INSERIR</a></li>
                 <li><a class="link" href="consulta.php">CONSULTAR</a></li>
                 <li><a class="link" href="funcion5.php">ELIMINAR</a></li>
 

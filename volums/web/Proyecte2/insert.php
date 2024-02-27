@@ -348,6 +348,27 @@ $json_data = '[
     }
 }
 
+$plataformas_array = array();
+
+foreach ($data as $game) {
+    $plataformas = explode(", ", $game['Plataforma']);
+    foreach ($plataformas as $plataforma) {
+        $plataformas_array[] = $plataforma;
+    }
+}
+
+$plataformas_array = array_unique($plataformas_array);
+
+foreach ($plataformas_array as $plataforma) {
+    $sql = "INSERT INTO PLATAFORMA (nom) VALUES ('$plataforma')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Plataforma insertada correctamente: $plataforma <br>";
+    } else {
+        echo "Error al insertar plataforma: " . $conn->error . "<br>";
+    }
+}
+
 
 $conn = null;
 
