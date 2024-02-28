@@ -17,8 +17,9 @@ function generarHTML() {
                 <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
                 <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
                 <li><a class="link" href="genero.php">GENERES</a></li>
-                <li><a class="link" href="consulta.php">CONSULTAR</a></li>
+                <li><a class="link" href="consulta.php">CONSULTAR_</a></li>
                 <li><a class="link" href="inserir_joc.php">INSERIR_JOC</a></li>
+                <li><a class="link" href="3consultes.php">3_CONSULTES</a></li>
                 <li><a class="link" href="eliminar_joc.php">ELIMINAR_JOC</a></li>
             </ul>
         </div>

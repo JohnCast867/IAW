@@ -32,25 +32,32 @@
         $basedatos = new Base_de_datos_videojocs();
         
         // Llamar al método inserir para insertar el cliente en la base de datos
-        $basedatos->eliminar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id);
+        $basedatos->insertar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id);
     }
 ?>    
-    <h2>Eliminar Videojoc</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="nom">Nom del Videojoc:</label>
-        <input type="text" id="nom" name="nom" required><br><br>
-        
-        <label for="data_llançament">Data de Llançament:</label>
-        <input type="text" id="data_llançament" name="data_llançament" placeholder="YYYY-MM-DD"><br><br>
-        
-        <label for="pegi">PEGI:</label>
-        <input type="number" id="pegi" name="pegi" min="0"><br><br>
-        
-        <label for="desenvolupador_id">ID del Desenvolupador:</label>
-        <input type="number" id="desenvolupador_id" name="desenvolupador_id" required><br><br>
-        
-        <input type="submit" value="Eliminar Videojoc">
-    </form>
+    <h2>Consulta de Videojocs</h2>
+
+<form action="consulta.php" method="GET">
+    <label for="nom">Cerca per nom:</label>
+    <input type="text" id="nom" name="nom">
+    <input type="submit" value="cercar">
+</form>
+
+<form action="consulta.php" method="GET">
+    <label for="data_inici">Cerca per data de llançament:</label>
+    <input type="text" id="data_inici" name="data_inici" placeholder="YYYY-MM-DD"><br><br>
+
+    <label for="data_final">fins a</label>
+    <input type="text" id="data_final" name="data_final" placeholder="YYYY-MM-DD"><br><br>
+
+    <input type="submit" value="cercar">
+</form>
+
+<form action="consulta.php" method="GET">
+    <label for="empresa">Cerca per empresa desenvolupadora:</label>
+    <input type="text" id="empresa" name="empresa">
+    <input type="submit" value="cercar">
+</form>
 </body>
 </html>
 

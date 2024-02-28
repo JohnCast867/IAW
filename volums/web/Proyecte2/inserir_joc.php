@@ -43,7 +43,6 @@
         <label for="data_llançament">Data de Llançament:</label>
         <input type="text" id="data_llançament" name="data_llançament" placeholder="YYYY-MM-DD"><br><br>
      
-
         <label for="pegi">PEGI:</label>
         <input type="number" id="pegi" name="pegi" min="0"><br><br>
 
