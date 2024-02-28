@@ -338,8 +338,8 @@ $json_data = '[
     $llançament = $game['Llançament'];
     
     $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
-            VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
-            ";
+            VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));"
+            ;
     
     if ($conn->query($sql) === TRUE) {
         echo "Registro insertado correctamente";
