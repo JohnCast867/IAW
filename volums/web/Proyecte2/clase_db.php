@@ -96,5 +96,33 @@ public function eliminar($servername, $username, $password, $entidad) {
   }
 }
 
+public function insertar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id) {
+  $conn = $this->connectar_bd($servername, $username, $password);
+  try {
+      $sql = "INSERT INTO VIDEOJOCS.VIDEOJOC (nom, data_llançament, pegi, desenvolupador_id) 
+              VALUES ('$nom', '$data_llançament', '$pegi', '$desenvolupador_id')";
+      $conn->exec($sql);
+      $last_id = $conn->lastInsertId();
+      echo "Registro insertado correctamente en la tabla joc con ID: " . $last_id . "<br>";
+  } catch(PDOException $e) {
+      echo "Error al insertar registro en la tabla joc: " . $e->getMessage();
+  }
+}
+
+
+public function eliminar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id) {
+  $conn = $this->connectar_bd($servername, $username, $password);
+  try {
+      $sql = "DELETE FROM VIDEOJOC WHERE nom = '$nom' AND data_llançament = '$data_llançament' AND pegi = $pegi AND DESENVOLUPADOR_id = $desenvolupador_id";
+
+      $conn->exec($sql);
+      $last_id = $conn->lastInsertId();
+      echo "Registro eliminat correctament de la taula VIDEOJOCS <br>";
+  } catch(PDOException $e) {
+      echo "Error al insertar registro en la tabla joc: " . $e->getMessage();
+  }
+}
+
+
 
 }
