@@ -181,31 +181,4 @@ public function consulta_juego_por_desenvolupador($servername, $username, $passw
   }
 }
 
-public function login($servername, $username, $password, $username1, $password1) {
-    $conn = $this->connectar_bd($servername, $username, $password);
-    try {
-        $stmt = $conn->prepare("SELECT * FROM VIDEOJOCS.users WHERE user = :user");
-        $stmt->bindParam(':user', $username1);
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            // Verify the password
-            if (password_verify($password1, $row['password'])) {
-                return true;
-            } else {
-                echo "Contraseña incorrecta.";
-                return false;
-            }
-        } else {
-            echo "El usuario '$username1' no existe.";
-            return false;
-        }
-    } catch(PDOException $e) {
-        echo "Error al realizar el inicio de sesión: " . $e->getMessage();
-        return false;
-    }
-}
-
-
 }
