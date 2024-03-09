@@ -11,6 +11,7 @@ function generarHTML() {
         <div>
             <ul>
                 <li><a class="link" href="3consultes.php">3 CONSULTES</a></li>
+                <li><a class="link" href="../login.php">LOGIN</a></li>
             </ul>
         </div>
     </nav>';

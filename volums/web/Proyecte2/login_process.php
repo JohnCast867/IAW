@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('DBACCES.php'); // Incluye el archivo de acceso a la base de datos
+require_once('DBACCES.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($result->rowCount() == 1) {
         $_SESSION['username'] = $username;
-        header("location: index.php"); // Redirecciona al usuario a la página de bienvenida
+        header("location: index.php"); 
     } else {
-        echo "Invalid username or password";
+        header("location: login.php");
     }
 }
 ?>
