@@ -8,8 +8,8 @@
 </head>
 <body>
 <?php
-    include "DBACCES.php";
-    include "clase_db.php";
+    include "../DBACCES.php";
+    include "../clase_db.php";
     include 'funciones.php';
     generarHTML();
 

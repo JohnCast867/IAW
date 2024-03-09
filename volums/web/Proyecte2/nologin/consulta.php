@@ -1,8 +1,8 @@
 <?php
-include "DBACCES.php";
-include "clase_db.php";
-include "funciones.php";
-generarHTML();
+    include "../DBACCES.php";
+    include "../clase_db.php";
+    include 'funciones.php';
+    generarHTML();
 
 function test_input($data) {
     $data = trim($data);

@@ -2,25 +2,16 @@
 
 function generarHTML() {
     $html = '<header>
-        <div class="titulo">
-            <h1>Proyecte 2a avaluacio</h1>
-            <h2>JOHN CASTILLO y NICOLAS GIMENEZ</h2>
-        </div>
+
     </header>
     <nav>
         <div>
             <ul>
                 <li><a class="link" href="index.php">INICI</a></li>
-                <li><a class="link" href="createdb.php">CREACIO_DB</a></li>
+                <li><a class="link" href="createdb.php">CREAR_DB</a></li>
                 <li><a class="link" href="creaciotaules.php">CREACIO_TABLAS</a></li>
-                <li><a class="link" href="insert.php">INSERCIO_DB</a></li>
-                <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
-                <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
-                <li><a class="link" href="genero.php">GENERES</a></li>
-                <li><a class="link" href="consulta.php">CONSULTAR</a></li>
-                <li><a class="link" href="inserir_joc.php">INSERIR_JOC</a></li>
-                <li><a class="link" href="3consultes.php">3_CONSULTES</a></li>
-                <li><a class="link" href="eliminar_joc.php">ELIMINAR_JOC</a></li>
+                <li><a class="link" href="alta.php">ALTA</a></li>
+                <li><a class="link" href="cercar.php">CERCAR</a></li>
             </ul>
         </div>
     </nav>';
@@ -37,6 +28,7 @@ function carrega_fitxer($nomFitxer, &$arrayAsso) {
     }
 }
 
+# funcion 1
 function tabla ($array) {
 echo "<table border=1>";
 echo '<tr><th>Nom</th>

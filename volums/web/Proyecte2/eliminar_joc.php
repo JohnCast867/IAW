@@ -20,7 +20,6 @@
         return $data;
     }
     
-    // Verificar si el formulario ha sido enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $nom = test_input($_POST['nom']);
@@ -28,10 +27,8 @@
         $pegi = test_input($_POST['pegi']);
         $desenvolupador_id = test_input($_POST['desenvolupador_id']);
     
-        // Instanciar la clase Base_de_datos_videojocs
         $basedatos = new Base_de_datos_videojocs();
         
-        // Llamar al método inserir para insertar el cliente en la base de datos
         $basedatos->eliminar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id);
     }
 ?>    
@@ -42,12 +39,6 @@
         
         <label for="data_llançament">Data de Llançament:</label>
         <input type="text" id="data_llançament" name="data_llançament" placeholder="YYYY-MM-DD"><br><br>
-        
-        <label for="pegi">PEGI:</label>
-        <input type="number" id="pegi" name="pegi" min="0"><br><br>
-        
-        <label for="desenvolupador_id">ID del Desenvolupador:</label>
-        <input type="number" id="desenvolupador_id" name="desenvolupador_id" required><br><br>
         
         <input type="submit" value="Eliminar Videojoc">
     </form>
