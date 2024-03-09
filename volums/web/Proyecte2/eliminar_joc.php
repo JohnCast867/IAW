@@ -34,10 +34,10 @@
 ?>    
     <h2>Eliminar Videojoc</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="nom">Nom del Videojoc:</label>
+        <label for="nom">Nombre del videojuego:</label>
         <input type="text" id="nom" name="nom" required><br><br>
         
-        <label for="data_llançament">Data de Llançament:</label>
+        <label for="data_llançament">Fecha de salida:</label>
         <input type="text" id="data_llançament" name="data_llançament" placeholder="YYYY-MM-DD"><br><br>
         
         <input type="submit" value="Eliminar Videojoc">

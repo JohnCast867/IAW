@@ -34,16 +34,16 @@
 ?>    
     <h2>Insertar Nuevo Videojuego</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="nom">Nom del Joc:</label>
+        <label for="nom">Nombre del juego:</label>
         <input type="text" id="nom" name="nom" required><br><br>
 
-        <label for="data_llançament">Data de Llançament:</label>
+        <label for="data_llançament">Fecha de salida:</label>
         <input type="text" id="data_llançament" name="data_llançament" placeholder="YYYY-MM-DD"><br><br>
      
         <label for="pegi">PEGI:</label>
         <input type="number" id="pegi" name="pegi" min="0"><br><br>
 
-        <label for="desenvolupador_id">ID del Desenvolupador:</label>
+        <label for="desenvolupador_id">ID de desarrolador:</label>
         <input type="number" id="desenvolupador_id" name="desenvolupador_id" min="1" required><br><br>
 
         <input type="submit" value="Afegir Joc">

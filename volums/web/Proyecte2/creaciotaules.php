@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taules</title>
+    <title>Tablas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@ try {
     -- -----------------------------------------------------
     -- Schema VIDEOJOCS
     -- -----------------------------------------------------
-    CREATE SCHEMA IF NOT EXISTS `VIDEOJOCS` ;
+    CREATE SCHEMA IF NOT EXISTS `VIDEOJOCS` DEFAULT CHARACTER SET utf8mb4 ;
     USE `VIDEOJOCS` ;
     
     -- -----------------------------------------------------
@@ -38,7 +38,9 @@ try {
       `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 41
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     -- -----------------------------------------------------
@@ -48,7 +50,9 @@ try {
       `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 2
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     -- -----------------------------------------------------
@@ -58,7 +62,9 @@ try {
       `id` INT(11) NOT NULL AUTO_INCREMENT,
       `nom` VARCHAR(45) NULL DEFAULT NULL,
       PRIMARY KEY (`id`))
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 17
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     -- -----------------------------------------------------
@@ -77,7 +83,9 @@ try {
         REFERENCES `VIDEOJOCS`.`DESENVOLUPADOR` (`id`)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION)
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 53
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     -- -----------------------------------------------------
@@ -99,7 +107,21 @@ try {
         REFERENCES `VIDEOJOCS`.`VIDEOJOC` (`id`)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION)
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8mb4;
+    
+    
+    -- -----------------------------------------------------
+    -- Table `VIDEOJOCS`.`users`
+    -- -----------------------------------------------------
+    CREATE TABLE IF NOT EXISTS `VIDEOJOCS`.`users` (
+      `id` INT(11) NOT NULL AUTO_INCREMENT,
+      `user` VARCHAR(45) NULL DEFAULT NULL,
+      `password` VARCHAR(45) NULL DEFAULT NULL,
+      PRIMARY KEY (`id`))
+    ENGINE = InnoDB
+    AUTO_INCREMENT = 2
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     -- -----------------------------------------------------
@@ -121,7 +143,8 @@ try {
         REFERENCES `VIDEOJOCS`.`VIDEOJOC` (`id`)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION)
-    ENGINE = InnoDB;
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8mb4;
     
     
     SET SQL_MODE=@OLD_SQL_MODE;
