@@ -4,7 +4,6 @@ include "clase_db.php";
 include "funciones.php";
 generarHTML();
 
-// Función para limpiar y validar datos
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -12,15 +11,12 @@ function test_input($data) {
     return $data;
 }
 
-// Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nom = test_input($_POST['nom']);
 
-    // Instanciar la clase Base_de_datos_videojocs
     $basedatos = new Base_de_datos_videojocs();
     
-    // Llamar al método inserir para insertar el cliente en la base de datos
     $basedatos->insertar_genero($servername, $username, $password, $nom);
 }
 ?>

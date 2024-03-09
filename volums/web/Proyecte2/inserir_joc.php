@@ -20,7 +20,6 @@
         return $data;
     }
     
-    // Verificar si el formulario ha sido enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $nom = test_input($_POST['nom']);
@@ -28,10 +27,8 @@
         $pegi = test_input($_POST['pegi']);
         $desenvolupador_id = test_input($_POST['desenvolupador_id']);
     
-        // Instanciar la clase Base_de_datos_videojocs
         $basedatos = new Base_de_datos_videojocs();
         
-        // Llamar al método inserir para insertar el cliente en la base de datos
         $basedatos->insertar_joc($servername, $username, $password, $nom, $data_llançament, $pegi, $desenvolupador_id);
     }
 ?>    
