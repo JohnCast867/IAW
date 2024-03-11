@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablas</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<?php
-    include 'funciones.php';
-    generarHTML();
-    include "db.php";
-try {
-    $sql = "-- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering
 
     SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
     SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -150,17 +136,4 @@ try {
     SET SQL_MODE=@OLD_SQL_MODE;
     SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
     SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-    ";
-
-    $conn->exec($sql);
-    echo "Table created successfully";
-  } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
-  }
-  
-  $conn = null;
-?>
-
-</body>
-</html>
-
+    

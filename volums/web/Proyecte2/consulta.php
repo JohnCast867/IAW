@@ -4,7 +4,6 @@ include "clase_db.php";
 include "funciones.php";
 generarHTML();
 
-// Función para limpiar y validar datos
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -12,19 +11,15 @@ function test_input($data) {
     return $data;
 }
 
-// Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $entidad = test_input($_POST['entidad']);
     $accion = test_input($_POST['accion']);
 
-    // Instanciar la clase Base_de_datos_videojocs
     $basedatos = new Base_de_datos_videojocs();
     
     if ($accion === "consulta") {
-        // Llamar al método consulta para realizar la consulta
         $basedatos->consulta($servername, $username, $password, $entidad);
     } elseif ($accion === "eliminacion") {
-        // Llamar al método eliminar para realizar la eliminación
         $basedatos->eliminar($servername, $username, $password, $entidad);
     }
 }

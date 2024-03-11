@@ -10,18 +10,8 @@ function generarHTML() {
     <nav>
         <div>
             <ul>
-                <li><a class="link" href="index.php">INICI</a></li>
-                <li><a class="link" href="createdb.php">CREACIO DB</a></li>
-                <li><a class="link" href="creaciotaules.php">CREACIO TABLAS</a></li>
-                <li><a class="link" href="insert.php">INSERCIO DB</a></li>
-                <li><a class="link" href="desarrollador.php">DESARROLLADORS</a></li>
-                <li><a class="link" href="plataforma.php">PLATAFORMES</a></li>
-                <li><a class="link" href="genero.php">GENERES</a></li>
-                <li><a class="link" href="consulta.php">CONSULTAR</a></li>
-                <li><a class="link" href="inserir_joc.php">INSERIR JOC</a></li>
                 <li><a class="link" href="3consultes.php">3 CONSULTES</a></li>
-                <li><a class="link" href="eliminar_joc.php">ELIMINAR JOC</a></li>
-                <li><a class="link" href="logout.php">LOGOUT</a></li>
+                <li><a class="link" href="../login.php">LOGIN</a></li>
             </ul>
         </div>
     </nav>';

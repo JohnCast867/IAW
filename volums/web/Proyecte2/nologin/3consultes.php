@@ -8,8 +8,8 @@
 </head>
 <body>
 <?php
-    include "DBACCES.php";
-    include "clase_db.php";
+    include "../DBACCES.php";
+    include "../clase_db.php";
     include 'funciones.php';
     generarHTML();
 
@@ -24,16 +24,19 @@
     
         $base_de_datos = new Base_de_datos_videojocs();
         
+        // Consultar por Nombre
         if (!empty($_POST['nom'])) {
             $nom = $_POST['nom'];
             $base_de_datos->consulta_juego_por_nombre($servername, $username, $password, $nom);
         }
     
+        // Consultar por Fecha de Lanzamiento
         if (!empty($_POST['data_llançament'])) {
             $fecha_llançament = $_POST['data_llançament'];
             $base_de_datos->consulta_juego_por_fecha($servername, $username, $password, $fecha_llançament);
         }
     
+        // Consultar por Desarrollador
         if (!empty($_POST['desenvolupador'])) {
             $desenvolupador = $_POST['desenvolupador'];
             $base_de_datos->consulta_juego_por_desenvolupador($servername, $username, $password, $desenvolupador);
