@@ -1,6 +1,17 @@
-<?php
 
-include "DBACCES.php";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<?php
+    include 'funciones.php';
+    generarHTML();
+    include "DBACCES.php";
 
 $json_data = '[
     {
@@ -324,52 +335,57 @@ $json_data = '[
   foreach ($desenvolupadors_array as $desenvolupador) {
       $sql = "INSERT INTO DESENVOLUPADOR (nom) VALUES ('$desenvolupador')";
   
-      if ($conn->query($sql) === TRUE) {
-          echo "Registro insertado correctamente: $desenvolupador <br>";
+      if ($conn->query($sql)) {
+          echo "Desenvolupador insertado correctamente: $desenvolupador <br>";
+      } else {
+          echo "Error al insertar desarrollador: " . $conn->error . "<br>";
+      }
+  }
+  
+  foreach ($data as $game) {
+      $nom = $game['Nom'];
+      $desenvolupador = $game['Desenvolupador'];
+      $plataforma = $game['Plataforma'];
+      $llançament = $game['Llançament'];
+  
+      $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
+              VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));
+              ";
+  
+      if ($conn->query($sql)) {
+          echo "Juego insertado correctamente: $nom <br>";
       } else {
           echo "Error al insertar registro: " . $conn->error . "<br>";
       }
   }
-
+  
+  $plataformas_array = array();
+  
   foreach ($data as $game) {
-    $nom = $game['Nom'];
-    $desenvolupador = $game['Desenvolupador'];
-    $plataforma = $game['Plataforma'];
-    $llançament = $game['Llançament'];
-    
-    $sql = "INSERT INTO VIDEOJOC (nom, data_llançament, DESENVOLUPADOR_id) 
-            VALUES ('$nom', '$llançament', (SELECT id FROM DESENVOLUPADOR WHERE nom='$desenvolupador'));"
-            ;
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro insertado correctamente";
-    } else {
-        echo "Error al insertar registro: " . $conn->error;
-    }
-}
-
-$plataformas_array = array();
-
-foreach ($data as $game) {
-    $plataformas = explode(", ", $game['Plataforma']);
-    foreach ($plataformas as $plataforma) {
-        $plataformas_array[] = $plataforma;
-    }
-}
-
-$plataformas_array = array_unique($plataformas_array);
-
-foreach ($plataformas_array as $plataforma) {
-    $sql = "INSERT INTO PLATAFORMA (nom) VALUES ('$plataforma')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Plataforma insertada correctamente: $plataforma <br>";
-    } else {
-        echo "Error al insertar plataforma: " . $conn->error . "<br>";
-    }
-}
-
-
-$conn = null;
-
+      $plataformas = explode(", ", $game['Plataforma']);
+      foreach ($plataformas as $plataforma) {
+          $plataformas_array[] = $plataforma;
+      }
+  }
+  
+  $plataformas_array = array_unique($plataformas_array);
+  
+  foreach ($plataformas_array as $plataforma) {
+      $sql = "INSERT INTO PLATAFORMA (nom) VALUES ('$plataforma')";
+  
+      if ($conn->query($sql)) {
+          echo "Plataforma insertada correctamente: $plataforma <br>";
+      } else {
+          echo "Error al insertar plataforma: " . $conn->error . "<br>";
+      }
+  }
+  
+  $conn->null;
+  
 ?>
+
+</body>
+</html>
+
+
+
