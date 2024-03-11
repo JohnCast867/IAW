@@ -1,0 +1,67 @@
+Implementa amb PHP un sistema d’informació per poder gestionar informació
+d’assignatures.
+De les assignatures volem saber: el seu nom, el curs al que pertanyen, les hores
+setmanals. Apart hi haurà un identificador auto_increment.
+Imaginam que sols hi haurà assignatures dels cursos: 1rESO, 2nESO, 2rESO,
+4ESO.
+Crea la taula assignatura directament al SGBD.
+La primera pàgina de l’aplicació ha de ser index.php que ha de contenir enllaços a
+cada una de les funcionalitats següents.
+1. FUNCIONALITAT 1: Fes un formulari per a donar d’alta una assignatura anomenat
+alta.php. A tenir en compte:
+a. Hi ha d’haver un botó/enllaç per tornar a la pàgina index.php a qualsevol
+moment.
+b. A continuació ha de sortir un llistat ordenat per curs i nom assignatura de
+totes la informació de totes les assignatures introduïdes fins al moment. Així
+l’usuari podrà visualitzar el que té introduït en aquell moment abans de fer
+l’alta. Fer ús de mètodes de la classe basededades que s’explica més
+endavant.
+c. A continuació ha de sortir el formulari per a l’alta.
+d. El camp per seleccionar el curs ha de ser un checkbox ja que ha de permetre
+que una assignatura pugui ser de més d’un curs.
+e. Quan es cliqui al botó insertar s’han de dur a terme les insercions
+corresponents a la base de dades , sense que s’hagi de comprovar si s’ha
+injectat o no codi maliciós ...
+f. Per a les operacions a la base de dades ha d’existir una classe anomenada
+basededades amb el mètode necessari per a poder dur a terme l’operació.
+g. Aquest mètode ha de ser cridat des de alta.php.
+h. S’han de fer tants d’inserts com cursos s’hagin seleccionat. Exemple: si s’ha
+introduït l’assignatura de matemàtiques a 1r ESO i a 2n ESO s’han de fer
+dos inserts a la base de dades , un per matemàtiques 1r ESO i un altre per
+matemàtiques 2n ESO.
+i. Una vegada introduïts els registres a la base de dades , ha de mostrar un
+missatge dient si s’ha pogut fer l’insert o no i tant en un cas com en l’altre el
+nombre de registres que hi ha introduïts en aquell moment. O sigui ha de dir:
+actualment hi ha 30 assignatures introduïdes a la base de dades. Per
+implementar aquesta part també s’ha de fer ús de mètodes implementats a la
+classe basededades.
+
+.
+Punts: 5
+
+2. FUNCIONALITAT 2: Fes una pantalla anomenada eliminar.php que ha de fer el
+següent:
+a. Hi ha d’haver un formulari amb una caixa de text per introduir el nom de
+l’assignatura a eliminar.
+b. Hi ha d’haver una llista desplegable que contingui: 1r ESO, 2n ESO, 2r ESO,
+4ESO.
+c. Quan l’usuari cliqui al botó eliminar s’ha d’eliminar el registre de la base de
+dades que es correspon amb el nom d’assignatura introduit a la caixa de text
+i curs introduït a la llista desplegable.
+d. Per a dur a terme l’eliminació s’ha d’implementar el mètode a la classe
+basededades i aquest ha de ser cridat des de eliminar.php
+Punts: 3
+3. FUNCIONALITAT 3: Fes una pantalla anomenada exporta.php encarregada
+d’exportar les dades de la base de dades en format JSON. A tenir en compte:
+a. Les dades s’han d’exportar ordenades per nom d’assignatura.
+b. Hi ha d’haver un botó que s’haurà de clicar per començar l’exportació de les
+dades. Quan s’hagi realitzat, es mostrarà a la mateixa pantalla, just davall del
+botó: “Exportació realitzada”
+c. Per a dur a terme aquesta operació hi ha d’haver un mètode a la classe
+basededades.
+d. Aquest mètode s’ha d’invocar des de exporta.php
+e. La pantalla ha de contenir un enllaç o botó per tornar a la pàgina index.php
+Punts: 2
+Important: Es penalitzarà cada pregunta si conté codi que no és necessari per
+implementar el que es demana. Penalització: màxim 2 punts (proporcional en funció
+de la quantitat de codi innecessari).

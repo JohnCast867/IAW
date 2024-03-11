@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "titol": "Avatar",
+        "dataEstreno": "2000-07-29",
+        "pressupost": "10000000",
+        "pais": "US"
+    },
+    {
+        "id": "2",
+        "titol": "El ilusionista",
+        "dataEstreno": "2000-07-29",
+        "pressupost": "100000213",
+        "pais": "ENGLAND"
+    },
+    {
+        "id": "3",
+        "titol": "Futbol",
+        "dataEstreno": "1999-06-29",
+        "pressupost": "123213",
+        "pais": "ENGLAND"
+    }
+]
